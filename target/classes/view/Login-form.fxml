@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="704.0" fitWidth="1204.0" layoutX="200.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../assets/login.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="525.0" fitWidth="428.0" layoutX="701.0" layoutY="70.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logbox.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="827.0" layoutY="101.0" prefHeight="54.0" prefWidth="182.0" text="Login">
+         <font>
+            <Font name="System Bold" size="37.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#86bcae" />
+                  <Stop color="#19688d" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <JFXTextField focusColor="#80d9c5" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="User name" unFocusColor="#80d9c5">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField focusColor="#80d9c5" labelFloat="true" layoutX="776.0" layoutY="395.0" prefHeight="40.0" prefWidth="276.0" promptText="Password" unFocusColor="#80d9c5">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </JFXPasswordField>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1018.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1019.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/lock.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="167.0" layoutX="840.0" layoutY="487.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/buttonlog.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="785.0" layoutY="678.0" text="Copyright © 2023 SavindaJ. All Rights Reserved." />
+      <Label layoutX="14.0" layoutY="371.0" text="Hostal Management System" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="26.0" />
+         </font>
+      </Label>
+      <Line endX="100.0" layoutX="918.0" layoutY="162.0" startX="-100.0" strokeWidth="3.0">
+         <stroke>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#a5f5ff" />
+                  <Stop color="#3628ff" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </stroke>
+      </Line>
+      <ImageView fitHeight="254.0" fitWidth="164.0" layoutX="436.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/logphone.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
