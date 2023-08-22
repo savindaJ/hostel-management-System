@@ -11,7 +11,6 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.LoginFormController">
    <children>
       <ImageView fitHeight="704.0" fitWidth="1204.0" layoutX="200.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
@@ -37,12 +36,12 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField focusColor="#80d9c5" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="User name" unFocusColor="#80d9c5">
+      <JFXTextField fx:id="txtUserName" focusColor="#80d9c5" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="User name" unFocusColor="#80d9c5">
          <font>
             <Font size="17.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField focusColor="#80d9c5" labelFloat="true" layoutX="776.0" layoutY="395.0" prefHeight="40.0" prefWidth="276.0" promptText="Password" unFocusColor="#80d9c5">
+      <JFXPasswordField fx:id="textPassword" focusColor="#80d9c5" labelFloat="true" layoutX="776.0" layoutY="395.0" onAction="#txtPasswordOnAction" prefHeight="40.0" prefWidth="276.0" promptText="Password" unFocusColor="#80d9c5">
          <font>
             <Font size="17.0" />
          </font>
@@ -57,7 +56,7 @@
             <Image url="@../assets/lock.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="167.0" layoutX="840.0" layoutY="487.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="52.0" fitWidth="167.0" layoutX="840.0" layoutY="487.0" onMouseClicked="#btnLogInOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/buttonlog.png" />
          </image>
@@ -78,10 +77,5 @@
             </LinearGradient>
          </stroke>
       </Line>
-      <ImageView fitHeight="254.0" fitWidth="164.0" layoutX="436.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/logphone.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>
