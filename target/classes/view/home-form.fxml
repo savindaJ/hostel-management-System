@@ -82,7 +82,7 @@
             <Font name="Arial Unicode MS" size="74.0" />
          </font>
       </Label>
-      <ImageView fitHeight="59.0" fitWidth="48.0" layoutX="890.0" layoutY="39.0" onMouseClicked="#btnLogoutOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnLogOut" fitHeight="59.0" fitWidth="48.0" layoutX="890.0" layoutY="39.0" onMouseClicked="#btnLogoutOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icons8-log-out-500.png" />
          </image>

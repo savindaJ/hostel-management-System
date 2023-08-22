@@ -16,9 +16,6 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class DashboardFormController {
-    public Label lblRoomTotal;
-    public Label lblStuTotal;
-    public Label lblAvRoom;
     public ImageView btnDashbord;
     public ImageView btnReservation;
     public ImageView btnStudent;
