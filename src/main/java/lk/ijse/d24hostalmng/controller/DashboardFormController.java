@@ -1,12 +1,19 @@
 package lk.ijse.d24hostalmng.controller;
 
 import javafx.animation.ScaleTransition;
+import javafx.animation.TranslateTransition;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
+
+import java.io.IOException;
 
 public class DashboardFormController {
     public Label lblRoomTotal;
@@ -16,6 +23,20 @@ public class DashboardFormController {
     public ImageView btnReservation;
     public ImageView btnStudent;
     public ImageView btnRoom;
+    public AnchorPane mainRoot;
+
+    @FXML
+    void initialize(){
+        setHomeUi();
+    }
+
+    private void setHomeUi() {
+        try {
+            setUi("home-form.fxml");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
     public void btnDashbordOnAction(MouseEvent event) {
     }
@@ -62,4 +83,21 @@ public class DashboardFormController {
     public void btnLogoutOnAction(MouseEvent event) {
 
     }
+
+    private void setUi(String fileName) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/" + fileName));
+        Pane root = fxmlLoader.load();
+        try {
+            mainRoot.getChildren().clear();
+            mainRoot.getChildren().setAll(root);
+            TranslateTransition tt = new TranslateTransition(Duration.millis(350), root);
+            tt.setFromX(-root.getWidth());
+            tt.setToX(0);
+            tt.play();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

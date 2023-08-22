@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.shape.Line?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="700.0" prefWidth="1200.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.DashboardFormController">
    <children>
@@ -34,78 +31,6 @@
             <Image url="@../assets/btnRoom.png" />
          </image>
       </ImageView>
-      <Label layoutX="305.0" layoutY="84.0" text="Welcome !" textFill="#3b91e8">
-         <font>
-            <Font name="System Bold" size="41.0" />
-         </font>
-      </Label>
-      <Label layoutX="309.0" layoutY="141.0" text="View report bashed on current progress." textFill="#908c8c">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="182.0" fitWidth="248.0" layoutX="268.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/boxDetail.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="182.0" fitWidth="248.0" layoutX="580.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/boxDetail.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="182.0" fitWidth="248.0" layoutX="887.0" layoutY="215.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/boxDetail.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="328.0" layoutY="238.0" text="Total of Romms" textFill="#084b8d">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="640.0" layoutY="238.0" text="Total of Student" textFill="#084b8d">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Label>
-      <Label layoutX="947.0" layoutY="238.0" text="Availble Rooms" textFill="#084b8d">
-         <font>
-            <Font name="System Bold" size="17.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblRoomTotal" layoutX="368.0" layoutY="272.0" text="10" textFill="#3b91e8">
-         <font>
-            <Font name="System Bold" size="41.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblStuTotal" layoutX="680.0" layoutY="272.0" text="10" textFill="#3b91e8">
-         <font>
-            <Font name="System Bold" size="41.0" />
-         </font>
-      </Label>
-      <Label fx:id="lblAvRoom" layoutX="987.0" layoutY="272.0" text="10" textFill="#3b91e8">
-         <font>
-            <Font name="System Bold" size="41.0" />
-         </font>
-      </Label>
-      <Line endX="54.0" layoutX="418.0" layoutY="333.0" startX="-100.0" />
-      <Line endX="54.0" layoutX="727.0" layoutY="333.0" startX="-100.0" />
-      <Line endX="54.0" layoutX="1032.0" layoutY="333.0" startX="-100.0" />
-      <ImageView fitHeight="276.0" fitWidth="368.0" layoutX="748.0" layoutY="417.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/detail.png" />
-         </image>
-      </ImageView>
-      <Label fx:id="lblTime" layoutX="315.0" layoutY="481.0" prefHeight="105.0" prefWidth="360.0" text="10.34.45" textFill="#245d97">
-         <font>
-            <Font name="Arial Unicode MS" size="74.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="59.0" fitWidth="48.0" layoutX="1111.0" layoutY="50.0" onMouseClicked="#btnLogoutOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/icons8-log-out-500.png" />
-         </image>
-      </ImageView>
+      <AnchorPane fx:id="mainRoot" layoutX="222.0" layoutY="4.0" prefHeight="700.0" prefWidth="980.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
 </AnchorPane>

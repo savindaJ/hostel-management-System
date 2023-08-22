@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="980.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.HomeFormController">
+   <children>
+      <ImageView fitHeight="674.0" fitWidth="966.0" layoutX="2.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/background.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="182.0" fitWidth="248.0" layoutX="49.0" layoutY="203.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/boxDetail.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="84.0" layoutY="73.0" text="Welcome !" textFill="#3b91e8">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Label layoutX="88.0" layoutY="130.0" text="View report bashed on current progress." textFill="#908c8c">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="182.0" fitWidth="248.0" layoutX="359.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/boxDetail.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="182.0" fitWidth="248.0" layoutX="666.0" layoutY="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/boxDetail.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="107.0" layoutY="227.0" text="Total of Romms" textFill="#084b8d">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="419.0" layoutY="227.0" text="Total of Student" textFill="#084b8d">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="726.0" layoutY="227.0" text="Availble Rooms" textFill="#084b8d">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblRoomTotal" layoutX="147.0" layoutY="261.0" text="10" textFill="#3b91e8">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblStuTotal" layoutX="459.0" layoutY="261.0" text="10" textFill="#3b91e8">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAvRoom" layoutX="766.0" layoutY="261.0" text="10" textFill="#3b91e8">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <Line endX="54.0" layoutX="197.0" layoutY="322.0" startX="-100.0" />
+      <Line endX="54.0" layoutX="506.0" layoutY="322.0" startX="-100.0" />
+      <Line endX="54.0" layoutX="811.0" layoutY="322.0" startX="-100.0" />
+      <ImageView fitHeight="276.0" fitWidth="368.0" layoutX="527.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/detail.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="lblTime" layoutX="94.0" layoutY="470.0" prefHeight="105.0" prefWidth="360.0" text="10.34.45" textFill="#245d97">
+         <font>
+            <Font name="Arial Unicode MS" size="74.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="59.0" fitWidth="48.0" layoutX="890.0" layoutY="39.0" onMouseClicked="#btnLogoutOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-log-out-500.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
