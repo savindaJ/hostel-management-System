@@ -5,7 +5,7 @@ import org.hibernate.Session;
 
 public class Launcher {
     public static void main(String[] args) {
-//        AppInitializer.main(args);
-        Session session = Configure.getInstance().getSession();
+        AppInitializer.main(args);
+//        Session session = Configure.getInstance().getSession();
     }
 }
