@@ -14,22 +14,22 @@
             <Image url="@../assets/dashbordRep.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnDashbord" fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="87.0" onMouseClicked="#btnDashbordOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/btndashbord.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnReservation" fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="169.0" onMouseClicked="#btnReservationOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/btnReservation.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnStudent" fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="251.0" onMouseClicked="#btnStudentOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/btnStudent.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="333.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnRoom" fitHeight="150.0" fitWidth="200.0" layoutX="11.0" layoutY="333.0" onMouseClicked="#btnRoomOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/btnRoom.png" />
          </image>
@@ -102,5 +102,10 @@
             <Font name="Arial Unicode MS" size="74.0" />
          </font>
       </Label>
+      <ImageView fitHeight="59.0" fitWidth="48.0" layoutX="1111.0" layoutY="50.0" onMouseClicked="#btnLogoutOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-log-out-500.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
