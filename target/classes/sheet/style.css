@@ -1,0 +1,22 @@
+#bevel {
+    -fx-background-color:
+            linear-gradient(#7283e3, #abcdff),
+            linear-gradient(#7283e3 0%, #d9d9d9 20%, #abcdff 100%),
+            linear-gradient(#7283e3 0%, #abcdff 50%);
+    -fx-background-radius: 8,7,6;
+    -fx-background-insets: 0,1,2;
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
+}
+#bevel:hover {
+    -fx-background-color:
+            rgba(0,0,0,0.08),
+            linear-gradient(#9a9a9a, #909090),
+            linear-gradient(#aa9bff 0%, #aa9bff 50%, #aa9bff 51%, #aa9bff 100%);
+    -fx-background-insets: 0 0 -1 0,0,1;
+    -fx-background-radius: 5,5,4;
+    -fx-padding: 3 30 3 30;
+    -fx-text-fill: #242d35;
+    -fx-font-size: 14px;
+}

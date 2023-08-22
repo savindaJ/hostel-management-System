@@ -73,6 +73,11 @@ public class DashboardFormController {
     }
 
     public void btnStudentOnAction(MouseEvent event) {
+        try {
+            setUi("student-form.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnRoomOnAction(MouseEvent event) {
