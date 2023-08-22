@@ -39,6 +39,7 @@ public class DashboardFormController {
     }
 
     public void btnDashbordOnAction(MouseEvent event) {
+       setHomeUi();
     }
 
     public void mouseEnterImg(MouseEvent event) {
@@ -78,10 +79,6 @@ public class DashboardFormController {
     }
 
     public void btnRoomOnAction(MouseEvent event) {
-    }
-
-    public void btnLogoutOnAction(MouseEvent event) {
-
     }
 
     private void setUi(String fileName) throws IOException {
