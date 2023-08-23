@@ -39,7 +39,7 @@
             <TableColumn prefWidth="143.66668701171875" text="Gender" />
         </columns>
       </TableView>
-      <JFXButton id="bevel" layoutX="647.0" layoutY="639.0" stylesheets="@../sheet/style.css" text="Update" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" layoutX="647.0" layoutY="639.0" prefHeight="39.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Update" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -48,7 +48,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="790.0" layoutY="639.0" stylesheets="@../sheet/style.css" text="Delete" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" layoutX="790.0" layoutY="639.0" prefHeight="39.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Delete" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -57,7 +57,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="603.0" layoutY="324.0" prefHeight="25.0" prefWidth="79.0" stylesheets="@../sheet/style.css" text="Add" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" layoutX="603.0" layoutY="324.0" prefHeight="39.0" prefWidth="103.0" stylesheets="@../sheet/style.css" text="Add" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -76,5 +76,10 @@
             </ImageView>
          </graphic>
       </JFXButton>
+      <ImageView fitHeight="203.0" fitWidth="259.0" layoutX="652.0" layoutY="105.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/student.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
