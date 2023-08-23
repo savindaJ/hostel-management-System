@@ -67,7 +67,7 @@
          </graphic>
       </JFXButton>
       <DatePicker layoutX="78.0" layoutY="317.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
-      <JFXButton id="bevel" layoutX="744.0" layoutY="26.0" prefHeight="39.0" prefWidth="159.0" stylesheets="@../sheet/style.css" text="Add new student" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" layoutX="783.0" layoutY="26.0" prefHeight="39.0" prefWidth="159.0" stylesheets="@../sheet/style.css" text="Add new student" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
