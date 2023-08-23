@@ -1,6 +1,8 @@
 package lk.ijse.d24hostalmng.controller;
 
 import javafx.animation.ScaleTransition;
+import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -13,6 +15,8 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class HomeFormController {
     public Label lblRoomTotal;
@@ -20,6 +24,26 @@ public class HomeFormController {
     public Label lblAvRoom;
     public Label lblTime;
     public ImageView btnLogOut;
+
+    @FXML
+    void initialize(){
+        setCurrentTime();
+    }
+
+    private void setCurrentTime() {
+        new Thread(()->{
+            SimpleDateFormat format=new SimpleDateFormat("hh:mm:ss");
+            while (true){
+                try {
+                    Thread.sleep(1000);
+                }catch (Exception ignored){
+                }
+                final String time=format.format(new Date());
+                Platform.runLater(() -> lblTime.setText(time));
+            }
+        }).start();
+
+    }
 
     public void btnLogoutOnAction(MouseEvent event) {
         Stage satge1=new Stage();
