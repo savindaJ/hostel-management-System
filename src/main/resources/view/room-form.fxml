@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="980.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.RoomFormController">
    <children>
       <ImageView fitHeight="684.0" fitWidth="973.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="14.0">
@@ -40,36 +39,27 @@
             <TableColumn prefWidth="206.33331298828125" text="Room-QTY" />
         </columns>
       </TableView>
-      <JFXButton id="bevel" layoutX="779.0" layoutY="25.0" prefHeight="37.0" prefWidth="168.0" stylesheets="@../sheet/style.css" text="Add New Room">
+      <JFXButton id="bevel" layoutX="766.0" layoutY="35.0" prefHeight="31.0" prefWidth="181.0" stylesheets="@../sheet/style.css" text="Add New Room">
          <graphic>
-            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-add-500.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="304.0" layoutY="308.0" prefHeight="37.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Add">
+      <JFXButton id="bevel" layoutX="770.0" layoutY="649.0" prefHeight="33.0" prefWidth="130.0" stylesheets="@../sheet/style.css" text="Update">
          <graphic>
-            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../assets/icons8-add-500.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </JFXButton>
-      <JFXButton id="bevel" layoutX="770.0" layoutY="642.0" prefHeight="37.0" prefWidth="139.0" stylesheets="@../sheet/style.css" text="Update">
-         <graphic>
-            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="23.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-edit-192.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="607.0" layoutY="641.0" prefHeight="37.0" prefWidth="139.0" stylesheets="@../sheet/style.css" text="Delete">
+      <JFXButton id="bevel" layoutX="607.0" layoutY="651.0" prefHeight="30.0" prefWidth="130.0" stylesheets="@../sheet/style.css" text="Delete">
          <graphic>
-            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="20.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-delete-192.png" />
                </image>
@@ -81,5 +71,14 @@
             <Image url="@../assets/room.png" />
          </image>
       </ImageView>
+      <JFXButton id="bevel" layoutX="290.0" layoutY="303.0" prefHeight="31.0" prefWidth="130.0" stylesheets="@../sheet/style.css" text="Add">
+         <graphic>
+            <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-add-500.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

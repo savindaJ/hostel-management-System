@@ -39,37 +39,37 @@
             <TableColumn prefWidth="143.66668701171875" text="Gender" />
         </columns>
       </TableView>
-      <JFXButton id="bevel" layoutX="647.0" layoutY="639.0" prefHeight="39.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Update" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" layoutX="638.0" layoutY="647.0" prefHeight="32.0" prefWidth="128.0" stylesheets="@../sheet/style.css" text="Update" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
-            <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="22.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-edit-192.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="790.0" layoutY="639.0" prefHeight="39.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Delete" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" layoutX="781.0" layoutY="647.0" prefHeight="32.0" prefWidth="128.0" stylesheets="@../sheet/style.css" text="Delete" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
-            <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="22.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-delete-192.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="603.0" layoutY="324.0" prefHeight="39.0" prefWidth="103.0" stylesheets="@../sheet/style.css" text="Add" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" layoutX="601.0" layoutY="334.0" prefHeight="33.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Add" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
-            <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="23.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-add-500.png" />
                </image>
             </ImageView>
          </graphic>
       </JFXButton>
-      <DatePicker layoutX="78.0" layoutY="317.0" prefHeight="25.0" prefWidth="200.0" promptText="Date" />
-      <JFXButton id="bevel" layoutX="783.0" layoutY="26.0" prefHeight="39.0" prefWidth="159.0" stylesheets="@../sheet/style.css" text="Add new student" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <DatePicker layoutX="78.0" layoutY="317.0" prefHeight="25.0" prefWidth="200.0" promptText="DOB" />
+      <JFXButton id="bevel" layoutX="764.0" layoutY="30.0" prefHeight="31.0" prefWidth="182.0" stylesheets="@../sheet/style.css" text="Add new student" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
-            <ImageView fitHeight="29.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="21.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../assets/icons8-add-500.png" />
                </image>

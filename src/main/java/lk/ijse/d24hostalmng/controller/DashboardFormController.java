@@ -70,6 +70,11 @@ public class DashboardFormController {
     }
 
     public void btnReservationOnAction(MouseEvent event) {
+        try {
+            setUi("reservation-form.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btnStudentOnAction(MouseEvent event) {
