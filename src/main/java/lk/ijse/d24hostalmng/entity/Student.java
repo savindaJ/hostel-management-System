@@ -4,18 +4,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "student")
-public class Student {
+public class Student implements SuperEntity{
     @Id
     @Column(name = "student_nic" , length = 40)
     private String studentNIC;
@@ -27,5 +26,8 @@ public class Student {
     private Date dob;
     @Column(name = "student_gender" ,nullable = false)
     private String gender;
+
+    @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
+    List<Reservation> reservations = new ArrayList<>();
 
 }
