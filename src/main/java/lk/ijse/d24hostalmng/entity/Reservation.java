@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
@@ -21,9 +24,14 @@ public class Reservation {
     @Column(name = "reservation_status",length = 50)
     private String status;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
+            @JoinColumn(name = "student_id")
     Student student;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToOne
+            @JoinColumn(name = "room_id")
     Room room;
+
+   /* @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "reservation")
+    List<StudentReservation> reservations = new ArrayList<>();*/
 }

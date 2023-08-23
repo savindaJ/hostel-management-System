@@ -16,7 +16,7 @@ import java.util.List;
 @Table(name = "student")
 public class Student implements SuperEntity{
     @Id
-    @Column(name = "student_nic" , length = 40)
+    @Column(name = "student_id" , length = 40)
     private String studentNIC;
     @Column(name = "student_name" ,length = 50 ,nullable = false)
     private String studentNAme;
@@ -27,7 +27,11 @@ public class Student implements SuperEntity{
     @Column(name = "student_gender" ,nullable = false)
     private String gender;
 
-    @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
-    List<Reservation> reservations = new ArrayList<>();
+   /* @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
+    List<Reservation> reservations = new ArrayList<>();*/
+
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "student")
+    List<StudentReservation> reservations = new ArrayList<>();
+
 
 }

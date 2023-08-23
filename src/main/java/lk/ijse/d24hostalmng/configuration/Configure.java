@@ -3,6 +3,7 @@ package lk.ijse.d24hostalmng.configuration;
 import lk.ijse.d24hostalmng.entity.Reservation;
 import lk.ijse.d24hostalmng.entity.Room;
 import lk.ijse.d24hostalmng.entity.Student;
+import lk.ijse.d24hostalmng.entity.StudentReservation;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -27,7 +28,8 @@ public class Configure {
         configuration.
                 addAnnotatedClass(Student.class).
                 addAnnotatedClass(Room.class).
-                addAnnotatedClass(Reservation.class);
+                addAnnotatedClass(Reservation.class).
+                addAnnotatedClass(StudentReservation.class);
 
         factory=configuration.setProperties(properties).buildSessionFactory();
     }
