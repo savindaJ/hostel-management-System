@@ -1,5 +1,6 @@
 package lk.ijse.d24hostalmng.configuration;
 
+import lk.ijse.d24hostalmng.entity.Student;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -21,7 +22,7 @@ public class Configure {
             throw new RuntimeException(e);
         }
 
-//        configuration.addAnnotatedClass(CustomerCopy.class).addAnnotatedClass(Item.class);
+        configuration.addAnnotatedClass(Student.class);
         factory=configuration.setProperties(properties).buildSessionFactory();
     }
 
