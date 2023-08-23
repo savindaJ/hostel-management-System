@@ -13,6 +13,7 @@ public class StudentDTO {
     private String studentNIC;
     private String studentNAme;
     private String address;
+    private String contact;
     private Date dob;
     private String gender;
 }

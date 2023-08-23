@@ -22,6 +22,8 @@ public class Student implements SuperEntity{
     private String studentNAme;
     @Column(name = "student_address" ,length = 50 ,nullable = false)
     private String address;
+    @Column(name = "student_contact")
+    private String contact;
     @Column(name = "student_dob" , nullable = false)
     private Date dob;
     @Column(name = "student_gender" ,nullable = false)
@@ -33,5 +35,12 @@ public class Student implements SuperEntity{
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "student")
     List<StudentReservation> reservations = new ArrayList<>();
 
-
+    public Student(String studentNIC, String studentNAme, String address, String contact, Date dob, String gender) {
+        this.studentNIC = studentNIC;
+        this.studentNAme = studentNAme;
+        this.address = address;
+        this.contact = contact;
+        this.dob = dob;
+        this.gender = gender;
+    }
 }

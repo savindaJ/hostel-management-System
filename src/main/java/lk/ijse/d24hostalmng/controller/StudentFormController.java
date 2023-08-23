@@ -4,12 +4,15 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.StudentBO;
+import lk.ijse.d24hostalmng.dto.StudentDTO;
 import lk.ijse.d24hostalmng.entity.Student;
+import lk.ijse.d24hostalmng.util.CustomAlert;
 
 import java.sql.Date;
 
@@ -40,7 +43,11 @@ public class StudentFormController {
 
     @FXML
     void initialize(){
+        setGender();
+    }
 
+    private void setGender() {
+        cmbGender.getItems().setAll("Male","Female","Other");
     }
 
     public void btnAddNewOnAction(ActionEvent event) {
@@ -78,6 +85,13 @@ public class StudentFormController {
 
     public void btnAddOnAction(ActionEvent event) {
         setDetail();
+        boolean save = studentBO.save(new StudentDTO(nic, name, address, contact, dob, gender));
+
+        if (save)
+            new CustomAlert(Alert.AlertType.CONFIRMATION,"Save ","Saved !","Student Save successful !").show();
+        else
+            new CustomAlert(Alert.AlertType.ERROR,"Save ","Not Saved !","Save not successful !").show();
+        initUI();
     }
 
     public void btnDeleteOnAction(ActionEvent event) {
