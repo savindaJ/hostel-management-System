@@ -81,6 +81,11 @@ public class DashboardFormController {
     }
 
     public void btnRoomOnAction(MouseEvent event) {
+        try {
+            setUi("room-form.fxml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void setUi(String fileName) throws IOException {
