@@ -19,16 +19,16 @@
             <Image url="@../assets/background.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtStudentNic" labelFloat="true" layoutX="81.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student NIC" />
+      <JFXTextField fx:id="txtStudentNic" disable="true" labelFloat="true" layoutX="81.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student NIC" />
       <Label layoutX="405.0" layoutY="21.0" text="Student Manage" textFill="#7e89ff">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtStudentName" labelFloat="true" layoutX="358.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student Name" />
-      <JFXTextField fx:id="txtStudentAddress" labelFloat="true" layoutX="78.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Address" />
-      <JFXTextField fx:id="txtStudentContact" labelFloat="true" layoutX="362.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="contact" />
-      <JFXComboBox fx:id="cmbGender" layoutX="365.0" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" promptText="Gender" />
+      <JFXTextField fx:id="txtStudentName" disable="true" labelFloat="true" layoutX="358.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student Name" />
+      <JFXTextField fx:id="txtStudentAddress" disable="true" labelFloat="true" layoutX="78.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Address" />
+      <JFXTextField fx:id="txtStudentContact" disable="true" labelFloat="true" layoutX="362.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="contact" />
+      <JFXComboBox fx:id="cmbGender" disable="true" layoutX="365.0" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" promptText="Gender" />
       <TableView fx:id="tblStudentDetail" layoutX="60.0" layoutY="380.0" prefHeight="252.0" prefWidth="850.0">
         <columns>
           <TableColumn fx:id="colNIC" prefWidth="147.0" text="NIC" />
@@ -66,7 +66,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <DatePicker fx:id="datePicker" layoutX="78.0" layoutY="317.0" prefHeight="25.0" prefWidth="200.0" promptText="DOB" />
+      <DatePicker fx:id="datePicker" disable="true" layoutX="78.0" layoutY="317.0" prefHeight="25.0" prefWidth="200.0" promptText="DOB" />
       <JFXButton id="bevel" layoutX="764.0" layoutY="30.0" onAction="#btnAddNewOnAction" prefHeight="31.0" prefWidth="182.0" stylesheets="@../sheet/style.css" text="Add new student" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="21.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
