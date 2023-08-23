@@ -1,14 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.d24hostalmng.controller.RoomFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane prefHeight="700.0" prefWidth="980.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.RoomFormController">
+   <children>
+      <ImageView fitHeight="684.0" fitWidth="973.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="14.0">
+         <image>
+            <Image url="@../assets/background.png" />
+         </image>
+      </ImageView>
+      <JFXTextField labelFloat="true" layoutX="255.0" layoutY="210.0" prefHeight="40.0" prefWidth="200.0" promptText="Room QTY" />
+      <JFXComboBox labelFloat="true" layoutX="107.0" layoutY="110.0" prefHeight="40.0" prefWidth="200.0" promptText="Room Type" />
+      <JFXTextField labelFloat="true" layoutX="380.0" layoutY="110.0" prefHeight="40.0" prefWidth="200.0" promptText="Key Money" />
+      <Label layoutX="34.0" layoutY="29.0" text="Next Room ID :" textFill="#406cdd">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="30.0" prefHeight="17.0" prefWidth="81.0" text="RM-001" textFill="#e85c5c">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TableView layoutX="58.0" layoutY="372.0" prefHeight="261.0" prefWidth="872.0">
+        <columns>
+          <TableColumn prefWidth="228.33331298828125" text="Room-ID" />
+          <TableColumn prefWidth="245.66668701171875" text="Room-Type" />
+            <TableColumn prefWidth="191.00003051757812" text="Room-Key Money" />
+            <TableColumn prefWidth="206.33331298828125" text="Room-QTY" />
+        </columns>
+      </TableView>
+      <JFXButton id="bevel" layoutX="779.0" layoutY="25.0" prefHeight="37.0" prefWidth="168.0" stylesheets="@../sheet/style.css" text="Add New Room">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-add-500.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton id="bevel" layoutX="304.0" layoutY="308.0" prefHeight="37.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Add">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-add-500.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton id="bevel" layoutX="770.0" layoutY="642.0" prefHeight="37.0" prefWidth="139.0" stylesheets="@../sheet/style.css" text="Update">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-edit-192.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton id="bevel" layoutX="607.0" layoutY="641.0" prefHeight="37.0" prefWidth="139.0" stylesheets="@../sheet/style.css" text="Delete">
+         <graphic>
+            <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/icons8-delete-192.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <ImageView fitHeight="208.0" fitWidth="347.0" layoutX="631.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/room.png" />
+         </image>
+      </ImageView>
+   </children>
 </AnchorPane>
