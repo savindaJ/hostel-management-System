@@ -2,7 +2,7 @@ package lk.ijse.d24hostalmng.bo;
 
 import java.util.List;
 
-public interface CrudBO <T,J>{
+public interface CrudBO <T,J> extends SuperBO{
 
     boolean save(T t);
 
