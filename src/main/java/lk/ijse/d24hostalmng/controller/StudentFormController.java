@@ -52,6 +52,7 @@ public class StudentFormController {
 
     @FXML
     void initialize(){
+        initUI();
         setGender();
         fillTable();
         setCellValueFactory();
