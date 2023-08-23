@@ -8,6 +8,7 @@ import lk.ijse.d24hostalmng.dto.StudentDTO;
 import lk.ijse.d24hostalmng.entity.Student;
 import org.hibernate.Session;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StudentBOImpl implements StudentBO {
@@ -45,6 +46,19 @@ public class StudentBOImpl implements StudentBO {
 
     @Override
     public List<StudentDTO> getAll() {
-        return null;
+        List<StudentDTO> studentDTOS = new ArrayList<>();
+        Session session = Configure.getInstance().getSession();
+        studentDAO.setSession(session);
+        for (Student student : studentDAO.getAll()){
+            studentDTOS.add(new StudentDTO(
+                    student.getStudentNIC(),
+                    student.getStudentNAme(),
+                    student.getAddress(),
+                    student.getContact(),
+                    student.getDob(),
+                    student.getGender()
+            ));
+        }
+        return studentDTOS;
     }
 }
