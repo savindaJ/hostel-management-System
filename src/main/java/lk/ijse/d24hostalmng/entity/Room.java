@@ -27,4 +27,11 @@ public class Room implements SuperEntity{
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "room")
     List<Reservation> reservations = new ArrayList<>();
+
+    public Room(String roomId, String roomType, String keyMoney, Integer qty) {
+        this.roomId = roomId;
+        this.roomType = roomType;
+        this.keyMoney = keyMoney;
+        this.qty = qty;
+    }
 }

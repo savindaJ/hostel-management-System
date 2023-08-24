@@ -1,5 +1,6 @@
 package lk.ijse.d24hostalmng.bo;
 
+import lk.ijse.d24hostalmng.bo.custom.impl.RoomBoImpl;
 import lk.ijse.d24hostalmng.bo.custom.impl.StudentBOImpl;
 
 public class BOFactory {
@@ -20,6 +21,8 @@ public class BOFactory {
         switch (boType){
             case STUDENT:
                 return (T) new StudentBOImpl();
+            case ROOM:
+                return (T) new RoomBoImpl();
             default:
                 return null;
         }

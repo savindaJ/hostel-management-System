@@ -1,5 +1,7 @@
 package lk.ijse.d24hostalmng.dao;
 
+import lk.ijse.d24hostalmng.bo.custom.impl.RoomBoImpl;
+import lk.ijse.d24hostalmng.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.d24hostalmng.dao.custom.impl.StudentDAOImpl;
 
 public class DAOFactory {
@@ -19,6 +21,8 @@ public class DAOFactory {
         switch (daoType){
             case STUDENTDAO:
                 return (T) new StudentDAOImpl();
+            case ROOMDAO:
+                return (T) new RoomDAOImpl();
             default:
                 return null;
         }
