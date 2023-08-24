@@ -17,13 +17,11 @@ import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.StudentBO;
 import lk.ijse.d24hostalmng.dto.StudentDTO;
 import lk.ijse.d24hostalmng.dto.tm.StudentTM;
-import lk.ijse.d24hostalmng.entity.Student;
 import lk.ijse.d24hostalmng.util.CustomAlert;
 
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
 
 public class StudentFormController {
 
@@ -75,6 +73,8 @@ public class StudentFormController {
                 cmbGender.setDisable(false);
                 datePicker.setDisable(false);
                 txtStudentNic.requestFocus();
+
+                tblStudentDetail.refresh();
             }
         });
     }
