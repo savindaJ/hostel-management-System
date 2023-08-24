@@ -20,16 +20,26 @@ public class StudentDAOImpl implements StudentDAO {
             Transaction transaction = session.beginTransaction();
             Serializable save = session.save(student);
             transaction.commit();
-            session.close();
             return save != null;
         }catch (Exception e){
             return false;
+        }finally {
+            session.close();
         }
     }
 
     @Override
     public boolean update(Student student) {
-        return false;
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.update(student);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            return false;
+        }finally {
+            session.close();
+        }
     }
 
     @Override

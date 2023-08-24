@@ -31,7 +31,16 @@ public class StudentBOImpl implements StudentBO {
 
     @Override
     public boolean update(StudentDTO studentDTO) {
-        return false;
+        Session session = Configure.getInstance().getSession();
+        studentDAO.setSession(session);
+        return studentDAO.update(new Student(
+                studentDTO.getStudentNIC(),
+                studentDTO.getStudentNAme(),
+                studentDTO.getAddress(),
+                studentDTO.getContact(),
+                studentDTO.getDob(),
+                studentDTO.getGender()
+        ));
     }
 
     @Override

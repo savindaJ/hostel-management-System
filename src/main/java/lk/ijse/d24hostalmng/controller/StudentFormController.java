@@ -150,6 +150,7 @@ public class StudentFormController {
         else
             new CustomAlert(Alert.AlertType.ERROR,"Save ","Not Saved !","Save not successful !").show();
         initUI();
+        fillTable();
     }
 
     public void btnDeleteOnAction(ActionEvent event) {
@@ -157,6 +158,13 @@ public class StudentFormController {
 
     public void btnUpdateOnAction(ActionEvent event) {
         setDetail();
+        boolean update = studentBO.update(new StudentDTO(nic, name, address, contact, dob, gender));
 
+        if (update)
+            new CustomAlert(Alert.AlertType.CONFIRMATION,"Update ","Updated !","Student Update successful !").show();
+        else
+            new CustomAlert(Alert.AlertType.ERROR,"Update ","Not Update !","Update not successful !").show();
+        initUI();
+        fillTable();
     }
 }
