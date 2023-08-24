@@ -19,16 +19,28 @@
             <Image url="@../assets/background.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtStudentNic" disable="true" labelFloat="true" layoutX="81.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student NIC" />
+      <JFXTextField fx:id="txtStudentNic" disable="true" labelFloat="true" layoutX="81.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student NIC">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextField>
       <Label layoutX="405.0" layoutY="21.0" text="Student Manage" textFill="#7e89ff">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtStudentName" disable="true" labelFloat="true" layoutX="358.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student Name" />
-      <JFXTextField fx:id="txtStudentAddress" disable="true" labelFloat="true" layoutX="78.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Address" />
-      <JFXTextField fx:id="txtStudentContact" disable="true" labelFloat="true" layoutX="362.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="contact" />
-      <JFXComboBox fx:id="cmbGender" disable="true" layoutX="365.0" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" promptText="Gender" />
+      <JFXTextField fx:id="txtStudentName" disable="true" labelFloat="true" layoutX="358.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student Name">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtStudentAddress" disable="true" labelFloat="true" layoutX="78.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Address">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextField>
+      <JFXTextField fx:id="txtStudentContact" disable="true" labelFloat="true" layoutX="362.0" layoutY="200.0" prefHeight="40.0" prefWidth="200.0" promptText="Contact">
+         <font>
+            <Font size="16.0" />
+         </font></JFXTextField>
+      <JFXComboBox fx:id="cmbGender" disable="true" labelFloat="true" layoutX="365.0" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" promptText="Gender" />
       <TableView fx:id="tblStudentDetail" layoutX="60.0" layoutY="380.0" prefHeight="252.0" prefWidth="850.0">
         <columns>
           <TableColumn fx:id="colNIC" prefWidth="147.0" text="NIC" />
@@ -39,7 +51,7 @@
             <TableColumn fx:id="colGender" prefWidth="143.66668701171875" text="Gender" />
         </columns>
       </TableView>
-      <JFXButton id="bevel" layoutX="638.0" layoutY="647.0" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="128.0" stylesheets="@../sheet/style.css" text="Update" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" fx:id="btnUpdate" layoutX="638.0" layoutY="647.0" onAction="#btnUpdateOnAction" prefHeight="32.0" prefWidth="128.0" stylesheets="@../sheet/style.css" text="Update" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -48,7 +60,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="781.0" layoutY="647.0" onAction="#btnDeleteOnAction" prefHeight="32.0" prefWidth="128.0" stylesheets="@../sheet/style.css" text="Delete" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" fx:id="btnDelete" layoutX="781.0" layoutY="647.0" onAction="#btnDeleteOnAction" prefHeight="32.0" prefWidth="128.0" stylesheets="@../sheet/style.css" text="Delete" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="22.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -57,7 +69,7 @@
             </ImageView>
          </graphic>
       </JFXButton>
-      <JFXButton id="bevel" layoutX="601.0" layoutY="334.0" onAction="#btnAddOnAction" prefHeight="33.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Add" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
+      <JFXButton id="bevel" fx:id="btnAdd" layoutX="601.0" layoutY="334.0" onAction="#btnAddOnAction" prefHeight="33.0" prefWidth="119.0" stylesheets="@../sheet/style.css" text="Add" textAlignment="JUSTIFY" textFill="#4f91fc" wrapText="true">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>

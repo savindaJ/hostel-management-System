@@ -1,5 +1,6 @@
 package lk.ijse.d24hostalmng.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -38,6 +39,9 @@ public class StudentFormController {
     public TableColumn colDate;
     public TableColumn colGender;
     public DatePicker datePicker;
+    public JFXButton btnUpdate;
+    public JFXButton btnDelete;
+    public JFXButton btnAdd;
 
     private String nic;
     private String name;
@@ -55,7 +59,7 @@ public class StudentFormController {
         fillTable();
         setCellValueFactory();
         tblStudentDetail.setOnMouseClicked((MouseEvent event) -> {
-            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 1){
+            if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
                 StudentTM selectedItem = (StudentTM) tblStudentDetail.getSelectionModel().getSelectedItem();
                 txtStudentNic.setText(selectedItem.getStudentNIC());
                 txtStudentName.setText(selectedItem.getStudentNAme());
@@ -74,6 +78,8 @@ public class StudentFormController {
                 datePicker.setDisable(false);
                 txtStudentNic.requestFocus();
 
+                btnUpdate.setDisable(false);
+                btnDelete.setDisable(false);
                 tblStudentDetail.refresh();
             }
         });
@@ -116,6 +122,7 @@ public class StudentFormController {
         cmbGender.setDisable(false);
         datePicker.setDisable(false);
         txtStudentNic.requestFocus();
+        btnAdd.setDisable(false);
     }
 
     void initUI(){
@@ -130,6 +137,9 @@ public class StudentFormController {
         txtStudentName.clear();
         txtStudentNic.clear();
         cmbGender.getItems().clear();
+        btnDelete.setDisable(true);
+        btnAdd.setDisable(true);
+        btnUpdate.setDisable(true);
     }
 
     private void setDetail() {
