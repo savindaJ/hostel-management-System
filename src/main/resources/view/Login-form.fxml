@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="704.0" fitWidth="1204.0" layoutX="200.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-4.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../assets/login.png" />
+            <Image url="@../assets/login3.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="525.0" fitWidth="428.0" layoutX="701.0" layoutY="70.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
@@ -36,33 +36,33 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="txtUserName" focusColor="#80d9c5" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="User name" unFocusColor="#80d9c5">
+      <JFXTextField fx:id="txtUserName" focusColor="BLACK" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="User name" unFocusColor="#f2be22">
          <font>
             <Font size="17.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="textPassword" focusColor="#80d9c5" labelFloat="true" layoutX="776.0" layoutY="395.0" onAction="#txtPasswordOnAction" prefHeight="40.0" prefWidth="276.0" promptText="Password" unFocusColor="#80d9c5">
+      <JFXPasswordField fx:id="textPassword" focusColor="BLACK" labelFloat="true" layoutX="776.0" layoutY="395.0" onAction="#txtPasswordOnAction" prefHeight="40.0" prefWidth="276.0" promptText="Password" unFocusColor="#eecc45">
          <font>
             <Font size="17.0" />
          </font>
       </JFXPasswordField>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1018.0" layoutY="284.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="22.0" layoutX="1028.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/user.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="1019.0" layoutY="396.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="22.0" layoutX="1028.0" layoutY="404.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/lock.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="52.0" fitWidth="167.0" layoutX="840.0" layoutY="487.0" onMouseClicked="#btnLogInOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/buttonlog.png" />
+            <Image url="@../assets/loginbutton2.png" />
          </image>
       </ImageView>
       <Label layoutX="785.0" layoutY="678.0" text="Copyright © 2023 SavindaJ. All Rights Reserved." />
-      <Label layoutX="14.0" layoutY="371.0" text="Hostal Management System" textFill="WHITE">
+      <Label layoutX="79.0" layoutY="313.0" text="Hostal Management System" textFill="WHITE">
          <font>
             <Font name="System Bold" size="26.0" />
          </font>

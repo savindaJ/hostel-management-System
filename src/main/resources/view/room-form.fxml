@@ -19,7 +19,7 @@
             <Image url="@../assets/background.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtRoomQty" labelFloat="true" layoutX="255.0" layoutY="210.0" prefHeight="40.0" prefWidth="200.0" promptText="Room QTY">
+      <JFXTextField fx:id="txtRoomQty" labelFloat="true" layoutX="379.0" layoutY="194.0" prefHeight="40.0" prefWidth="200.0" promptText="Room QTY">
          <font>
             <Font size="16.0" />
          </font></JFXTextField>
@@ -40,10 +40,11 @@
       </Label>
       <TableView fx:id="tblRoom" layoutX="58.0" layoutY="372.0" prefHeight="261.0" prefWidth="872.0">
         <columns>
-          <TableColumn fx:id="colRoomID" prefWidth="228.33331298828125" text="Room-ID" />
-          <TableColumn fx:id="colRoomType" prefWidth="245.66668701171875" text="Room-Type" />
-            <TableColumn fx:id="colKeyMoney" prefWidth="191.00003051757812" text="Room-Key Money" />
-            <TableColumn fx:id="colQty" prefWidth="206.33331298828125" text="Room-QTY" />
+          <TableColumn fx:id="colRoomID" prefWidth="130.0" text="Room-ID" />
+          <TableColumn fx:id="colRoomType" prefWidth="172.0" text="Room-Type" />
+            <TableColumn fx:id="colKeyMoney" prefWidth="182.0" text="Room-Key Money" />
+            <TableColumn fx:id="colQty" prefWidth="174.0" text="Room-QTY" />
+            <TableColumn fx:id="colAvailability" prefWidth="213.0" text="Room-Availability" />
         </columns>
       </TableView>
       <JFXButton id="bevel" fx:id="btnAddNew" layoutX="766.0" layoutY="35.0" onAction="#btnAddNewOnAction" prefHeight="31.0" prefWidth="181.0" stylesheets="@../sheet/style.css" text="Add New Room">
@@ -93,5 +94,6 @@
          </font>
       </Label>
       <Line endX="100.0" layoutX="492.0" layoutY="43.0" startX="-100.0" />
+      <JFXComboBox fx:id="cmbRoomAvailability" labelFloat="true" layoutX="107.0" layoutY="194.0" prefHeight="40.0" prefWidth="200.0" promptText="Room Availability" />
    </children>
 </AnchorPane>

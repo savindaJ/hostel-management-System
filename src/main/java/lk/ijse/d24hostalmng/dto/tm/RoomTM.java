@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 public class RoomTM {
     private String roomId;
     private String roomType;
-    private String keyMoney;
+    private Double keyMoney;
     private Integer qty;
+    private String roomAvailability;
 }
