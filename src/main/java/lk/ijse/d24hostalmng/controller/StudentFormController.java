@@ -154,6 +154,15 @@ public class StudentFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent event) {
+
+        boolean delete = studentBO.delete(txtStudentNic.getText());
+
+        if (delete)
+            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete ","Deleted !","Student Delete successful !").show();
+        else
+            new CustomAlert(Alert.AlertType.ERROR,"Delete ","Not Delete !","Delete not successful !").show();
+        initUI();
+        fillTable();
     }
 
     public void btnUpdateOnAction(ActionEvent event) {

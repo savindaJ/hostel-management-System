@@ -45,7 +45,9 @@ public class StudentBOImpl implements StudentBO {
 
     @Override
     public boolean delete(String s) {
-        return false;
+        Session session = Configure.getInstance().getSession();
+        studentDAO.setSession(session);
+        return studentDAO.delete(s);
     }
 
     @Override
