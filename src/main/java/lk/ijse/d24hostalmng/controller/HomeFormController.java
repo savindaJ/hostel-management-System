@@ -25,15 +25,20 @@ public class HomeFormController {
     public Label lblTime;
     public ImageView btnLogOut;
 
+    boolean run = true;
+
+    private Thread thread;
+
     @FXML
     void initialize(){
         setCurrentTime();
+        run = true;
     }
 
     private void setCurrentTime() {
-        new Thread(()->{
+        thread =  new Thread(()->{
             SimpleDateFormat format=new SimpleDateFormat("hh:mm:ss");
-            while (true){
+            while (run){
                 try {
                     Thread.sleep(1000);
                 }catch (Exception ignored){
@@ -41,11 +46,15 @@ public class HomeFormController {
                 final String time=format.format(new Date());
                 Platform.runLater(() -> lblTime.setText(time));
             }
-        }).start();
+        });
 
+       thread.start();
     }
 
     public void btnLogoutOnAction(MouseEvent event) {
+        run = false;
+        thread.interrupt();
+
         Stage satge1=new Stage();
         try {
             satge1.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/Login-form.fxml"))));
