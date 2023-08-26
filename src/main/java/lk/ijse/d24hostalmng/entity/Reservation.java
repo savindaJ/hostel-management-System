@@ -23,6 +23,8 @@ public class Reservation implements SuperEntity{
     private Date date;
     @Column(name = "reservation_status",length = 50)
     private String status;
+    @Column(name = "key_money_exp_date")
+    private Date expDate;
 
     @ManyToOne
             @JoinColumn(name = "student_id")

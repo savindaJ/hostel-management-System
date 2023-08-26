@@ -14,7 +14,6 @@ public class RoomDAOImpl implements RoomDAO {
 
     private Session session;
 
-
     @Override
     public boolean save(Room room) {
        try {
