@@ -176,7 +176,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="16.0" layoutY="431.0" prefHeight="242.0" prefWidth="932.0">
+      <TableView fx:id="tblResView" layoutX="16.0" layoutY="431.0" prefHeight="242.0" prefWidth="932.0">
         <columns>
           <TableColumn fx:id="colReseId" prefWidth="91.66666412353516" text="Reservation ID" />
           <TableColumn fx:id="colStuNic" prefWidth="113.33332824707031" text="Student NIC" />
@@ -184,9 +184,9 @@
             <TableColumn fx:id="colRoomId" minWidth="0.0" prefWidth="65.33334350585938" text="Room ID" />
             <TableColumn fx:id="colRoomType" prefWidth="105.0" text="Room Type" />
             <TableColumn fx:id="colDate" prefWidth="98.0" text="Current Date" />
-            <TableColumn fx:id="colKeyMoney" prefWidth="148.0" text="Key Money" />
-            <TableColumn fx:id="colKeyMoneyStatus" minWidth="0.0" prefWidth="110.3333740234375" text="Key Money Status" />
-            <TableColumn fx:id="colExpDate" prefWidth="108.6666259765625" text="EXP-DATE" />
+            <TableColumn fx:id="colKeyMoney" prefWidth="106.0" text="Key Money" />
+            <TableColumn fx:id="colKeyMoneyStatus" minWidth="0.0" prefWidth="114.0" text="Key Money Status" />
+            <TableColumn fx:id="colExpDate" prefWidth="148.0" text="EXP-DATE" />
         </columns>
       </TableView>
       <JFXComboBox layoutX="144.0" layoutY="399.0" prefHeight="25.0" prefWidth="127.0" promptText="View Type" />

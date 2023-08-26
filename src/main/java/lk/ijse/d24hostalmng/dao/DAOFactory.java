@@ -1,6 +1,7 @@
 package lk.ijse.d24hostalmng.dao;
 
 import lk.ijse.d24hostalmng.bo.custom.impl.RoomBoImpl;
+import lk.ijse.d24hostalmng.dao.custom.impl.QuaryDAOImpl;
 import lk.ijse.d24hostalmng.dao.custom.impl.ReservationDAOImpl;
 import lk.ijse.d24hostalmng.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.d24hostalmng.dao.custom.impl.StudentDAOImpl;
@@ -11,7 +12,7 @@ public class DAOFactory {
     private DAOFactory(){}
 
     public enum DAOType{
-        STUDENTDAO,ROOMDAO,RESERVATIONDAO,RESERVATIONDETAILDAO
+        STUDENTDAO,ROOMDAO,RESERVATIONDAO,RESERVATIONDETAILDAO,QUARYDAO
     }
 
     public static DAOFactory getInstance(){
@@ -26,6 +27,8 @@ public class DAOFactory {
                 return (T) new RoomDAOImpl();
             case RESERVATIONDAO:
                 return (T) new ReservationDAOImpl();
+            case QUARYDAO:
+                return (T) new QuaryDAOImpl();
             default:
                 return null;
         }

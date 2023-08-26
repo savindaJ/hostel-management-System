@@ -20,3 +20,11 @@
     -fx-text-fill: #242d35;
     -fx-font-size: 14px;
 }
+
+.beautiful-row {
+    -fx-background-color: #F0F0F0; /* Light gray background */
+    -fx-cell-size: 10px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333; /* Dark gray text color */
+    -fx-padding: 5px 10px;
+}

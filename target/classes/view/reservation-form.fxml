@@ -176,7 +176,7 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <TableView layoutX="16.0" layoutY="431.0" prefHeight="242.0" prefWidth="932.0">
+      <TableView fx:id="tblResView" layoutX="16.0" layoutY="431.0" prefHeight="242.0" prefWidth="932.0">
         <columns>
           <TableColumn fx:id="colReseId" prefWidth="91.66666412353516" text="Reservation ID" />
           <TableColumn fx:id="colStuNic" prefWidth="113.33332824707031" text="Student NIC" />

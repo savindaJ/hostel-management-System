@@ -1,13 +1,13 @@
 package lk.ijse.d24hostalmng.bo.custom.impl;
 
-import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.ReservationBO;
-import lk.ijse.d24hostalmng.bo.custom.RoomBO;
 import lk.ijse.d24hostalmng.configuration.Configure;
 import lk.ijse.d24hostalmng.dao.DAOFactory;
+import lk.ijse.d24hostalmng.dao.custom.QuaryDAO;
 import lk.ijse.d24hostalmng.dao.custom.ReservationDAO;
 import lk.ijse.d24hostalmng.dao.custom.RoomDAO;
 import lk.ijse.d24hostalmng.dao.custom.StudentDAO;
+import lk.ijse.d24hostalmng.dto.CustomReservationDTO;
 import lk.ijse.d24hostalmng.dto.ReservationDTO;
 import lk.ijse.d24hostalmng.dto.RoomDTO;
 import lk.ijse.d24hostalmng.dto.StudentDTO;
@@ -15,7 +15,6 @@ import lk.ijse.d24hostalmng.entity.Reservation;
 import lk.ijse.d24hostalmng.entity.Room;
 import lk.ijse.d24hostalmng.entity.Student;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.sql.Date;
 import java.time.LocalDate;
@@ -26,6 +25,7 @@ public class ReservationBOImpl implements ReservationBO {
     ReservationDAO reservationDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.RESERVATIONDAO);
     StudentDAO studentDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.STUDENTDAO);
     RoomDAO roomDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.ROOMDAO);
+    QuaryDAO quaryDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.QUARYDAO);
 
     @Override
     public boolean save(ReservationDTO reservationDTO) {
@@ -44,13 +44,13 @@ public class ReservationBOImpl implements ReservationBO {
         Session roomUpdSession = Configure.getInstance().getSession();
         roomDAO.setSession(roomUpdSession);
         boolean update = roomDAO.update(room);
-        if (update){
 
-            System.out.println("update after////////////////////////////////");
+        if (update){
 
             Session resSession = Configure.getInstance().getSession();
             reservationDAO.setSession(resSession);
-            boolean save = reservationDAO.save(new Reservation(
+
+            return reservationDAO.save(new Reservation(
                     reservationDTO.getReservationID(),
                     Date.valueOf(reservationDTO.getDate()),
                     reservationDTO.getStatus(),
@@ -58,10 +58,6 @@ public class ReservationBOImpl implements ReservationBO {
                     student,
                     room
             ));
-
-            if (save){
-                System.out.println("////////////////////////////");
-            }
         }
 
         return false;
@@ -150,5 +146,13 @@ public class ReservationBOImpl implements ReservationBO {
                 room.getQty(),
                 room.getRoomAvailability()
         );
+    }
+
+    @Override
+    public List<CustomReservationDTO> getAllReservation() {
+        Session session = Configure.getInstance().getSession();
+        quaryDAO.setSession(session);
+        List<CustomReservationDTO> dtos = quaryDAO.getAllReservation();
+        return dtos;
     }
 }

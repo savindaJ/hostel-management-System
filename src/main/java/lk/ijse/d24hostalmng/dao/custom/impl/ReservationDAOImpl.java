@@ -1,6 +1,7 @@
 package lk.ijse.d24hostalmng.dao.custom.impl;
 
 import lk.ijse.d24hostalmng.dao.custom.ReservationDAO;
+import lk.ijse.d24hostalmng.dto.CustomReservationDTO;
 import lk.ijse.d24hostalmng.entity.Reservation;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -62,4 +63,5 @@ public class ReservationDAOImpl implements ReservationDAO {
         session.close();
         return newId;
     }
+
 }
