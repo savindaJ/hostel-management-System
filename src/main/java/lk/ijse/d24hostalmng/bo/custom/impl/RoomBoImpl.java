@@ -31,7 +31,15 @@ public class RoomBoImpl implements RoomBO {
 
     @Override
     public boolean update(RoomDTO roomDTO) {
-        return false;
+        Session session = Configure.getInstance().getSession();
+        roomDAO.setSession(session);
+        return roomDAO.update(new Room(
+                roomDTO.getRoomId(),
+                roomDTO.getRoomType(),
+                roomDTO.getKeyMoney(),
+                roomDTO.getQty(),
+                roomDTO.getAvailability()
+        ));
     }
 
     @Override

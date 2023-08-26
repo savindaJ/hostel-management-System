@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="700.0" prefWidth="980.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.ReservationFormController">
    <children>
       <ImageView fitHeight="689.0" fitWidth="971.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="14.0">
@@ -68,11 +67,20 @@
                               <Font name="System Bold" size="21.0" />
                            </font>
                         </Label>
-                        <JFXComboBox labelFloat="true" layoutX="454.0" layoutY="32.0" prefHeight="30.0" prefWidth="143.0" promptText="Room ID" />
+                        <JFXComboBox labelFloat="true" layoutX="454.0" layoutY="32.0" prefHeight="30.0" prefWidth="170.0" promptText="Room ID" />
                         <JFXComboBox labelFloat="true" layoutX="680.0" layoutY="31.0" prefHeight="30.0" prefWidth="143.0" promptText="Payment Status" />
-                        <JFXTextField labelFloat="true" layoutX="457.0" layoutY="99.0" promptText="Room Type" />
-                        <JFXTextField labelFloat="true" layoutX="456.0" layoutY="143.0" promptText="Key Money" />
-                        <JFXTextField labelFloat="true" layoutX="456.0" layoutY="189.0" promptText="QTY" />
+                        <JFXTextField labelFloat="true" layoutX="457.0" layoutY="99.0" promptText="Room Type">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="456.0" layoutY="143.0" promptText="Key Money">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="456.0" layoutY="189.0" promptText="QTY">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXTextField>
                         <JFXButton id="bevel" layoutX="601.0" layoutY="262.0" prefHeight="36.0" prefWidth="146.0" stylesheets="@../sheet/style.css" text="Reserve">
                            <graphic>
                               <ImageView fitHeight="26.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
@@ -117,9 +125,18 @@
                            </font>
                         </Label>
                         <JFXComboBox labelFloat="true" layoutX="489.0" layoutY="23.0" prefHeight="30.0" prefWidth="143.0" promptText="Payment Status" />
-                        <JFXTextField labelFloat="true" layoutX="283.0" layoutY="67.0" promptText="Room Type" />
-                        <JFXTextField labelFloat="true" layoutX="282.0" layoutY="111.0" promptText="Key Money" />
-                        <JFXTextField labelFloat="true" layoutX="282.0" layoutY="157.0" promptText="QTY" />
+                        <JFXTextField labelFloat="true" layoutX="283.0" layoutY="67.0" promptText="Room Type">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="282.0" layoutY="111.0" promptText="Key Money">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXTextField>
+                        <JFXTextField labelFloat="true" layoutX="282.0" layoutY="157.0" promptText="QTY">
+                           <font>
+                              <Font size="15.0" />
+                           </font></JFXTextField>
                         <JFXButton id="bevel" layoutX="595.0" layoutY="261.0" prefHeight="35.0" prefWidth="124.0" stylesheets="@../sheet/style.css" text="Update">
                            <graphic>
                               <ImageView fitHeight="23.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
@@ -161,14 +178,15 @@
       </Label>
       <TableView layoutX="16.0" layoutY="431.0" prefHeight="242.0" prefWidth="932.0">
         <columns>
-          <TableColumn prefWidth="124.33333587646484" text="Reservation ID" />
-          <TableColumn prefWidth="129.33334350585938" text="Student NIC" />
-            <TableColumn prefWidth="97.66665649414062" text="Student Name" />
-            <TableColumn minWidth="0.0" prefWidth="96.33334350585938" text="Room ID" />
-            <TableColumn prefWidth="118.0" text="Room Type" />
-            <TableColumn prefWidth="112.0" text="Current Date" />
-            <TableColumn prefWidth="117.6666259765625" text="Key Money" />
-            <TableColumn prefWidth="140.3333740234375" text="Key Money Status" />
+          <TableColumn prefWidth="91.66666412353516" text="Reservation ID" />
+          <TableColumn prefWidth="113.33332824707031" text="Student NIC" />
+            <TableColumn prefWidth="90.33334350585938" text="Student Name" />
+            <TableColumn minWidth="0.0" prefWidth="65.33334350585938" text="Room ID" />
+            <TableColumn prefWidth="105.0" text="Room Type" />
+            <TableColumn prefWidth="98.0" text="Current Date" />
+            <TableColumn prefWidth="148.0" text="Key Money" />
+            <TableColumn minWidth="0.0" prefWidth="110.3333740234375" text="Key Money Status" />
+            <TableColumn prefWidth="108.6666259765625" text="EXP-DATE" />
         </columns>
       </TableView>
       <JFXComboBox layoutX="144.0" layoutY="399.0" prefHeight="25.0" prefWidth="127.0" promptText="View Type" />

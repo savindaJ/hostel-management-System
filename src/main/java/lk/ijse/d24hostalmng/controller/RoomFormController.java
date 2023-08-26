@@ -152,6 +152,23 @@ public class RoomFormController {
     }
 
     public void btnUpdateOnAction(ActionEvent event) {
+        if (setData()){
+            boolean update = roomBO.update(new RoomDTO(
+                    roomID,
+                    roomType,
+                    keyMoney,
+                    roomQTY,
+                    roomAvailability
+            ));
+
+            if (update)
+                new CustomAlert(Alert.AlertType.CONFIRMATION,"Update ","Updated !","Room Update successful !").show();
+            else
+                new CustomAlert(Alert.AlertType.ERROR,"Update ","Not Update !","Update not successful !").show();
+            initUI();
+            fillTable();
+            setRoomID();
+        }
 
     }
 

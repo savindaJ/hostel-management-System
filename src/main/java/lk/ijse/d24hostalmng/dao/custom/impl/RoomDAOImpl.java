@@ -31,7 +31,16 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public boolean update(Room room) {
-        return false;
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.update(room);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            return false;
+        }finally {
+            session.close();
+        }
     }
 
     @Override
