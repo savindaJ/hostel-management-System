@@ -1,12 +1,16 @@
 package lk.ijse.d24hostalmng.bo.custom.impl;
 
+import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.ReservationBO;
+import lk.ijse.d24hostalmng.bo.custom.RoomBO;
 import lk.ijse.d24hostalmng.configuration.Configure;
 import lk.ijse.d24hostalmng.dao.DAOFactory;
 import lk.ijse.d24hostalmng.dao.custom.ReservationDAO;
+import lk.ijse.d24hostalmng.dao.custom.RoomDAO;
 import lk.ijse.d24hostalmng.dao.custom.StudentDAO;
 import lk.ijse.d24hostalmng.dto.ReservationDTO;
 import lk.ijse.d24hostalmng.dto.StudentDTO;
+import lk.ijse.d24hostalmng.entity.Room;
 import lk.ijse.d24hostalmng.entity.Student;
 import org.hibernate.Session;
 
@@ -16,6 +20,7 @@ import java.util.List;
 public class ReservationBOImpl implements ReservationBO {
     ReservationDAO reservationDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.RESERVATIONDAO);
     StudentDAO studentDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.STUDENTDAO);
+    RoomDAO roomDAO = DAOFactory.getInstance().getDAO(DAOFactory.DAOType.ROOMDAO);
 
     @Override
     public boolean save(ReservationDTO reservationDTO) {
@@ -75,5 +80,16 @@ public class ReservationBOImpl implements ReservationBO {
                 student.getDob(),
                 student.getGender()
         );
+    }
+
+    @Override
+    public List<String> getRoomIds() {
+        List<String> roomIds = new ArrayList<>();
+        Session session = Configure.getInstance().getSession();
+        roomDAO.setSession(session);
+        for (Room room : roomDAO.getAll()){
+            roomIds.add(room.getRoomId());
+        }
+        return roomIds;
     }
 }

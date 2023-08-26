@@ -52,6 +52,15 @@ public class ReservationFormController {
     void initialize(){
         setResId();
         setStudentIDs();
+        setRoomIds();
+    }
+
+    private void setRoomIds() {
+        ObservableList<String> roomIdList = FXCollections.observableArrayList();
+        for (String ids : reservationBO.getRoomIds()){
+            roomIdList.add(ids);
+        }
+        cmbRoomId.setItems(roomIdList);
     }
 
     private void setStudentIDs() {

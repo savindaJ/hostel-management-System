@@ -8,7 +8,10 @@ import java.util.List;
 
 public interface ReservationBO extends CrudBO<ReservationDTO,String> {
     String getNextResID();
+
     List<String> getStudentIDs();
 
     StudentDTO getStudent(String stuNic);
+
+    List<String> getRoomIds();
 }
