@@ -12,7 +12,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "student_reservation")
-public class StudentReservation {
+public class StudentReservation implements SuperEntity{
 
     /*@EmbeddedId
     private EmbeddedPK embeddedPK;*/
