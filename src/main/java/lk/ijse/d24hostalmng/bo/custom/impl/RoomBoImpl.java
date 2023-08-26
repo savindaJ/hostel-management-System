@@ -44,7 +44,9 @@ public class RoomBoImpl implements RoomBO {
 
     @Override
     public boolean delete(String s) {
-        return false;
+        Session session = Configure.getInstance().getSession();
+        roomDAO.setSession(session);
+        return roomDAO.delete(s);
     }
 
     @Override

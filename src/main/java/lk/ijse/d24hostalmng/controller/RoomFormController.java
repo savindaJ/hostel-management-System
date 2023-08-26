@@ -18,11 +18,7 @@ import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.RoomBO;
 import lk.ijse.d24hostalmng.dto.RoomDTO;
 import lk.ijse.d24hostalmng.dto.tm.RoomTM;
-import lk.ijse.d24hostalmng.entity.Room;
 import lk.ijse.d24hostalmng.util.CustomAlert;
-import org.w3c.dom.stylesheets.LinkStyle;
-
-import java.util.List;
 
 public class RoomFormController {
 
@@ -57,7 +53,10 @@ public class RoomFormController {
         setRoomID();
         setTypes();
         fillTable();
+        tblRowOnAction();
+    }
 
+    private void tblRowOnAction() {
         tblRoom.setOnMouseClicked((MouseEvent event)->{
             if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
                 RoomTM selectedItem = tblRoom.getSelectionModel().getSelectedItem();
@@ -78,7 +77,6 @@ public class RoomFormController {
                 btnAdd.setDisable(true);
             }
         });
-
     }
 
     private void fillTable() {
@@ -173,6 +171,14 @@ public class RoomFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent event) {
+        boolean delete = roomBO.delete(lblNextRoomID.getText());
+        if (delete)
+            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete ","Deleted !","Room Delete successful !").show();
+        else
+            new CustomAlert(Alert.AlertType.ERROR,"Delete ","Not Delete !","Delete not successful !").show();
+        fillTable();
+        initUI();
+        setRoomID();
     }
 
     public void btnAddOnAction(ActionEvent event) {
