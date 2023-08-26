@@ -33,7 +33,7 @@ public class Student implements SuperEntity{
     List<Reservation> reservations = new ArrayList<>();*/
 
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "student")
-    List<StudentReservation> reservations = new ArrayList<>();
+    List<Reservation> reservations = new ArrayList<>();
 
     public Student(String studentNIC, String studentNAme, String address, String contact, Date dob, String gender) {
         this.studentNIC = studentNIC;

@@ -5,6 +5,7 @@ import lk.ijse.d24hostalmng.entity.Reservation;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class ReservationDAOImpl implements ReservationDAO {
@@ -13,7 +14,17 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean save(Reservation reservation) {
-        return false;
+        try {
+            Transaction transaction = session.beginTransaction();
+            Serializable save = session.save(reservation);
+            transaction.commit();
+            return  save!=null;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            session.close();
+        }
     }
 
     @Override

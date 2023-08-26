@@ -25,8 +25,8 @@ public class Configure {
         configuration.
                 addAnnotatedClass(Student.class).
                 addAnnotatedClass(Room.class).
-                addAnnotatedClass(Reservation.class).
-                addAnnotatedClass(StudentReservation.class)
+                addAnnotatedClass(Reservation.class)
+                /*addAnnotatedClass(StudentReservation.class)*/
                 .addAnnotatedClass(User.class);
 
         factory=configuration.setProperties(properties).buildSessionFactory();

@@ -37,47 +37,47 @@
                            </image>
                         </ImageView>
                         <JFXComboBox fx:id="cmdStudentNic" labelFloat="true" layoutX="16.0" layoutY="33.0" onAction="#cmdStudentNicOnAction" prefHeight="30.0" prefWidth="143.0" promptText="Student NIC" />
-                        <Label layoutX="213.0" layoutY="45.0" text="Name :" textFill="WHITE">
+                        <Label layoutX="206.0" layoutY="46.0" text="Name :" textFill="WHITE">
                            <font>
-                              <Font name="System Bold" size="22.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label layoutX="205.0" layoutY="131.0" text="Address :" textFill="WHITE">
                            <font>
-                              <Font name="System Bold" size="22.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label layoutX="207.0" layoutY="211.0" text="Contact :" textFill="WHITE">
                            <font>
-                              <Font name="System Bold" size="22.0" />
+                              <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
                         <Label fx:id="lblStudentName" alignment="CENTER" layoutX="197.0" layoutY="81.0" prefHeight="31.0" prefWidth="223.0" text="Savinda">
                            <font>
-                              <Font name="System Bold" size="21.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
                         <Label fx:id="lblStuAddress" alignment="CENTER" layoutX="200.0" layoutY="169.0" prefHeight="31.0" prefWidth="223.0" text="Matara">
                            <font>
-                              <Font name="System Bold" size="21.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
                         <Label fx:id="lblContact" alignment="CENTER" layoutX="197.0" layoutY="251.0" prefHeight="31.0" prefWidth="223.0" text="0716775507">
                            <font>
-                              <Font name="System Bold" size="21.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
                         <JFXComboBox fx:id="cmbRoomId" labelFloat="true" layoutX="454.0" layoutY="32.0" onAction="#cmbRoomIdOnAction" prefHeight="30.0" prefWidth="170.0" promptText="Room ID" />
                         <JFXComboBox fx:id="cmbPaymentStatus" labelFloat="true" layoutX="680.0" layoutY="31.0" prefHeight="30.0" prefWidth="143.0" promptText="Payment Status" />
-                        <JFXTextField fx:id="txtRoomType" labelFloat="true" layoutX="457.0" layoutY="99.0" promptText="Room Type">
+                        <JFXTextField fx:id="txtRoomType" labelFloat="true" layoutX="457.0" layoutY="101.0" promptText="Room Type">
                            <font>
                               <Font size="15.0" />
                            </font></JFXTextField>
-                        <JFXTextField fx:id="txtKeyMoney" labelFloat="true" layoutX="456.0" layoutY="143.0" promptText="Key Money">
+                        <JFXTextField fx:id="txtKeyMoney" labelFloat="true" layoutX="680.0" layoutY="103.0" promptText="Key Money">
                            <font>
                               <Font size="15.0" />
                            </font></JFXTextField>
-                        <JFXTextField fx:id="txtRoomQty" labelFloat="true" layoutX="456.0" layoutY="189.0" promptText="QTY">
+                        <JFXTextField fx:id="txtRoomQty" labelFloat="true" layoutX="572.0" layoutY="169.0" promptText="QTY">
                            <font>
                               <Font size="15.0" />
                            </font></JFXTextField>

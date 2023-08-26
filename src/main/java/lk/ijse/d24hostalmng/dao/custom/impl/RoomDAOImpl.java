@@ -59,7 +59,16 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public Room find(String s) {
-        return null;
+        try {
+            Transaction transaction = session.beginTransaction();
+            Room room = session.get(Room.class, s);
+            transaction.commit();
+            return room;
+        }catch (Exception e){
+            return null;
+        }finally {
+            session.close();
+        }
     }
 
     @Override
@@ -81,7 +90,7 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public String getNextID() {
-        String newId = "RM001";
+        String newId = "RM000";
         Transaction transaction = session.beginTransaction();
         List list = session.createNativeQuery("select room_id from room order by room_id desc limit 1").list();
         if (!list.isEmpty()) newId = (String) list.get(0);

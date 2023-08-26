@@ -9,11 +9,16 @@ import lk.ijse.d24hostalmng.dao.custom.ReservationDAO;
 import lk.ijse.d24hostalmng.dao.custom.RoomDAO;
 import lk.ijse.d24hostalmng.dao.custom.StudentDAO;
 import lk.ijse.d24hostalmng.dto.ReservationDTO;
+import lk.ijse.d24hostalmng.dto.RoomDTO;
 import lk.ijse.d24hostalmng.dto.StudentDTO;
+import lk.ijse.d24hostalmng.entity.Reservation;
 import lk.ijse.d24hostalmng.entity.Room;
 import lk.ijse.d24hostalmng.entity.Student;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +29,47 @@ public class ReservationBOImpl implements ReservationBO {
 
     @Override
     public boolean save(ReservationDTO reservationDTO) {
+        System.out.println(reservationDTO);
+        Date expDate = genarateExpDate(reservationDTO.getDate());
+        System.out.println("key money expDate :"+expDate);
+
+        Session session = Configure.getInstance().getSession();
+        studentDAO.setSession(session);
+        Student student = studentDAO.find(reservationDTO.getStudentNic());
+
+        Session roomSession = Configure.getInstance().getSession();
+        roomDAO.setSession(roomSession);
+        Room room = roomDAO.find(reservationDTO.getRoomId());
+        room.setQty(room.getQty()-1);
+        Session roomUpdSession = Configure.getInstance().getSession();
+        roomDAO.setSession(roomUpdSession);
+        boolean update = roomDAO.update(room);
+        if (update){
+
+            System.out.println("update after////////////////////////////////");
+
+            Session resSession = Configure.getInstance().getSession();
+            reservationDAO.setSession(resSession);
+            boolean save = reservationDAO.save(new Reservation(
+                    reservationDTO.getReservationID(),
+                    Date.valueOf(reservationDTO.getDate()),
+                    reservationDTO.getStatus(),
+                    expDate,
+                    student,
+                    room
+            ));
+
+            if (save){
+                System.out.println("////////////////////////////");
+            }
+        }
+
         return false;
+    }
+
+    private Date genarateExpDate(LocalDate date) {
+        LocalDate genarateDate = date.plusMonths(1);
+        return Date.valueOf(genarateDate);
     }
 
     @Override
@@ -91,5 +136,19 @@ public class ReservationBOImpl implements ReservationBO {
             roomIds.add(room.getRoomId());
         }
         return roomIds;
+    }
+
+    @Override
+    public RoomDTO getRoom(String value) {
+        Session session = Configure.getInstance().getSession();
+        roomDAO.setSession(session);
+        Room room = roomDAO.find(value);
+        return new RoomDTO(
+                room.getRoomId(),
+                room.getRoomType(),
+                room.getKeyMoney(),
+                room.getQty(),
+                room.getRoomAvailability()
+        );
     }
 }

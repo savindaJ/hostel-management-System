@@ -7,15 +7,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReservationDTO {
     private String reservationID;
-    private Date date;
+    private LocalDate date;
     private String status;
-    private Date expDate;
-    Student student;
-    Room room;
+    private String studentNic;
+    private String roomId;
+
 }
