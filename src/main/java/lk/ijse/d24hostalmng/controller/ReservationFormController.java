@@ -7,11 +7,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.ReservationBO;
 import lk.ijse.d24hostalmng.dto.CustomReservationDTO;
@@ -36,13 +34,11 @@ public class ReservationFormController {
     public JFXTextField txtKeyMoney;
     public JFXTextField txtRoomQty;
     public JFXButton btnReservation;
-    public JFXComboBox cmbReservationId;
     public Label lblStuId;
     public Label lblStuName;
     public JFXComboBox cmbPStatusEdit;
     public JFXTextField txtRoomTypeEdit;
     public JFXTextField txtKeyMoneyEdit;
-    public JFXTextField txtQtyEdit;
     public JFXButton btnUpdate;
     public JFXButton btnDelete;
     public Label lblResId;
@@ -56,8 +52,10 @@ public class ReservationFormController {
     public TableColumn colKeyMoneyStatus;
     public TableColumn colExpDate;
     public TableView tblResView;
-    private final ReservationBO reservationBO = BOFactory.getInstance().getBO(BOFactory.BOType.RESERVATION);
+    public Tab tabEdit;
+    public Tab tabReseve;
 
+    private final ReservationBO reservationBO = BOFactory.getInstance().getBO(BOFactory.BOType.RESERVATION);
 
     @FXML
     void initialize(){
@@ -67,6 +65,17 @@ public class ReservationFormController {
         setPaymentStatus();
         fillTableAll();
         setCellValueFactory();
+        setWanningExpRes();
+        setTableOnAction();
+    }
+
+    private void setTableOnAction() {
+        tblResView.setOnMouseClicked(t->{
+            if (t.getButton().equals(MouseButton.PRIMARY) && t.getClickCount() == 2){
+                tabEdit.getTabPane().getSelectionModel().select(tabEdit);
+                CustomResTM selectedItem = (CustomResTM) tblResView.getSelectionModel().getSelectedItem();
+            }
+        });
     }
 
     private void setCellValueFactory() {
@@ -96,9 +105,33 @@ public class ReservationFormController {
                     dto.getKeyMoneyStatus(),
                     dto.getExpDate()
             ));
-
         }
         tblResView.setItems(resTMS);
+    }
+
+    private void setWanningExpRes() {
+        tblResView.setRowFactory(tv -> {
+            return new TableRow<CustomResTM>() {
+                @Override
+                protected void updateItem(CustomResTM item, boolean empty) {
+                    super.updateItem(item, empty);
+                    Date date = Date.valueOf(LocalDate.now());
+
+                    int date1 = date.getDate();
+                    int month = date.getMonth();
+                    if (item == null || empty) {
+                        setStyle("");
+                    } else {
+
+                        if (item.getExpDate().equals(date) || item.getExpDate().getDate()>date1 && item.getExpDate().getMonth()>month) {
+                            setStyle("-fx-background-color: #f1a2a2;");
+                        } else {
+                            setStyle("");
+                        }
+                    }
+                }
+            };
+        });
     }
 
     private void setPaymentStatus() {
@@ -155,6 +188,7 @@ public class ReservationFormController {
     }
 
     public void cmbReservationIdOnAction(ActionEvent event) {
+
     }
 
     public void btnUpdateOnAction(ActionEvent event) {
