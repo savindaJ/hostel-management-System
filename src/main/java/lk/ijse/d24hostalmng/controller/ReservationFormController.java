@@ -3,15 +3,20 @@ package lk.ijse.d24hostalmng.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.ReservationBO;
+import lk.ijse.d24hostalmng.dto.StudentDTO;
+
+import java.util.List;
 
 public class ReservationFormController {
-    public JFXComboBox cmdStudentNic;
+    public JFXComboBox<String> cmdStudentNic;
     public Label lblStudentName;
     public Label lblStuAddress;
     public Label lblContact;
@@ -46,6 +51,15 @@ public class ReservationFormController {
     @FXML
     void initialize(){
         setResId();
+        setStudentIDs();
+    }
+
+    private void setStudentIDs() {
+        ObservableList<String> idList = FXCollections.observableArrayList();
+        for (String ids : reservationBO.getStudentIDs()){
+            idList.add(ids);
+        }
+        cmdStudentNic.setItems(idList);
     }
 
     private void setResId() {
@@ -53,6 +67,10 @@ public class ReservationFormController {
     }
 
     public void cmdStudentNicOnAction(ActionEvent event) {
+        StudentDTO studentDTO = reservationBO.getStudent(cmdStudentNic.getValue());
+        lblStudentName.setText(studentDTO.getStudentNAme());
+        lblStuAddress.setText(studentDTO.getAddress());
+        lblContact.setText(studentDTO.getContact());
     }
 
     public void cmbRoomIdOnAction(ActionEvent event) {

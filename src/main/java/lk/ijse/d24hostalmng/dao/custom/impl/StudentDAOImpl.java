@@ -59,7 +59,17 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public Student find(String s) {
-        return null;
+        try {
+            Transaction transaction = session.beginTransaction();
+            Student student = session.get(Student.class, s);
+            transaction.commit();
+            return student;
+        }catch (Exception e){
+            return null;
+        }finally {
+            session.close();
+        }
+
     }
 
     @Override
