@@ -7,10 +7,7 @@ import lk.ijse.d24hostalmng.dao.custom.QuaryDAO;
 import lk.ijse.d24hostalmng.dao.custom.ReservationDAO;
 import lk.ijse.d24hostalmng.dao.custom.RoomDAO;
 import lk.ijse.d24hostalmng.dao.custom.StudentDAO;
-import lk.ijse.d24hostalmng.dto.CustomReservationDTO;
-import lk.ijse.d24hostalmng.dto.ReservationDTO;
-import lk.ijse.d24hostalmng.dto.RoomDTO;
-import lk.ijse.d24hostalmng.dto.StudentDTO;
+import lk.ijse.d24hostalmng.dto.*;
 import lk.ijse.d24hostalmng.entity.Reservation;
 import lk.ijse.d24hostalmng.entity.Room;
 import lk.ijse.d24hostalmng.entity.Student;
@@ -154,5 +151,19 @@ public class ReservationBOImpl implements ReservationBO {
         quaryDAO.setSession(session);
         List<CustomReservationDTO> dtos = quaryDAO.getAllReservation();
         return dtos;
+    }
+
+    @Override
+    public CustomReciveDTO findReciveReservation(String reservationID) {
+        Session session = Configure.getInstance().getSession();
+        reservationDAO.setSession(session);
+        Reservation reservation = reservationDAO.find(reservationID);
+        return new CustomReciveDTO(
+                reservation.getReservationID(),
+                reservation.getDate(),
+                reservation.getStatus(),
+                reservation.getStudent().getStudentNIC(),
+                reservation.getRoom().getRoomId()
+        );
     }
 }

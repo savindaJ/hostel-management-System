@@ -40,7 +40,16 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public Reservation find(String s) {
-        return null;
+        try {
+            Transaction transaction = session.beginTransaction();
+            Reservation reservation = session.get(Reservation.class, s);
+            transaction.commit();
+            return reservation;
+        }catch (Exception e){
+            return null;
+        }finally {
+            session.close();
+        }
     }
 
     @Override

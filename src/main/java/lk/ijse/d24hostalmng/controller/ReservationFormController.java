@@ -12,10 +12,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseButton;
 import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.ReservationBO;
-import lk.ijse.d24hostalmng.dto.CustomReservationDTO;
-import lk.ijse.d24hostalmng.dto.ReservationDTO;
-import lk.ijse.d24hostalmng.dto.RoomDTO;
-import lk.ijse.d24hostalmng.dto.StudentDTO;
+import lk.ijse.d24hostalmng.dto.*;
 import lk.ijse.d24hostalmng.dto.tm.CustomResTM;
 import lk.ijse.d24hostalmng.util.CustomAlert;
 
@@ -74,7 +71,9 @@ public class ReservationFormController {
             if (t.getButton().equals(MouseButton.PRIMARY) && t.getClickCount() == 2){
                 tabEdit.getTabPane().getSelectionModel().select(tabEdit);
                 CustomResTM selectedItem = (CustomResTM) tblResView.getSelectionModel().getSelectedItem();
-
+                CustomReciveDTO reservationDTO = reservationBO.findReciveReservation(selectedItem.getReservationID());
+                lblStuId.setText(reservationDTO.getStudentNic());
+//                lblStuName.setText();
             }
         });
     }
