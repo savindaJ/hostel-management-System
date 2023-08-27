@@ -74,7 +74,7 @@ public class ReservationFormController {
             if (t.getButton().equals(MouseButton.PRIMARY) && t.getClickCount() == 2){
                 tabEdit.getTabPane().getSelectionModel().select(tabEdit);
                 CustomResTM selectedItem = (CustomResTM) tblResView.getSelectionModel().getSelectedItem();
-                System.out.println(selectedItem.getReservationID());
+
             }
         });
     }

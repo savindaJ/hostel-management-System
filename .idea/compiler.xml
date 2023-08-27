@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Hostel-management-system" />
+        <module name="hostel-management-System" />
       </profile>
     </annotationProcessing>
   </component>
