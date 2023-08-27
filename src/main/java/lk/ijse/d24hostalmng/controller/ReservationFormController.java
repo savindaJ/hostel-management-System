@@ -74,6 +74,7 @@ public class ReservationFormController {
             if (t.getButton().equals(MouseButton.PRIMARY) && t.getClickCount() == 2){
                 tabEdit.getTabPane().getSelectionModel().select(tabEdit);
                 CustomResTM selectedItem = (CustomResTM) tblResView.getSelectionModel().getSelectedItem();
+                System.out.println(selectedItem.getReservationID());
             }
         });
     }
@@ -105,6 +106,7 @@ public class ReservationFormController {
                     dto.getKeyMoneyStatus(),
                     dto.getExpDate()
             ));
+            setWanningExpRes();
         }
         tblResView.setItems(resTMS);
     }
@@ -123,7 +125,7 @@ public class ReservationFormController {
                         setStyle("");
                     } else {
 
-                        if (item.getExpDate().equals(date) || item.getExpDate().getDate()>date1 && item.getExpDate().getMonth()>month) {
+                        if (item.getExpDate().equals(date) || item.getExpDate().getMonth()==month && item.getExpDate().getDate()<date1) {
                             setStyle("-fx-background-color: #f1a2a2;");
                         } else {
                             setStyle("");
@@ -185,10 +187,8 @@ public class ReservationFormController {
             new CustomAlert(Alert.AlertType.CONFIRMATION,"Save ","Saved !","Student Save successful !").show();
         else
             new CustomAlert(Alert.AlertType.ERROR,"Save ","Not Saved !","Save not successful !").show();
-    }
-
-    public void cmbReservationIdOnAction(ActionEvent event) {
-
+        setResId();
+        fillTableAll();
     }
 
     public void btnUpdateOnAction(ActionEvent event) {
