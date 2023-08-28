@@ -213,4 +213,11 @@ public class ReservationBOImpl implements ReservationBO {
         reservationDAO.setSession(updateSession);
         return reservationDAO.update(reservation);
     }
+
+    @Override
+    public List<CustomReservationDTO> getTypeOfReservation(String value) {
+        Session session = Configure.getInstance().getSession();
+        quaryDAO.setSession(session);
+        return quaryDAO.getTypeOfList(value);
+    }
 }

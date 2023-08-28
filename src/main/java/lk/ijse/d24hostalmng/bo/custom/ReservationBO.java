@@ -24,4 +24,6 @@ public interface ReservationBO extends CrudBO<ReservationDTO,String> {
     boolean updateStatus(String resId);
 
     boolean updatePaymentAndExpireDate(String resId, String value);
+
+    List<CustomReservationDTO> getTypeOfReservation(String value);
 }

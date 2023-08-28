@@ -52,6 +52,7 @@ public class ReservationFormController {
     public Tab tabEdit;
     public Tab tabReseve;
     public Label lblSelectResId;
+    public JFXComboBox<String> cmbViewType;
 
     private final ReservationBO reservationBO = BOFactory.getInstance().getBO(BOFactory.BOType.RESERVATION);
 
@@ -66,6 +67,7 @@ public class ReservationFormController {
         setWanningExpRes();
         setTableOnAction();
         cmbPStatusEdit.getItems().setAll("PAID","PENDING","NOT-PAID");
+        cmbViewType.getItems().setAll("ALL","PAID","PENDING","EXPIRED");
         fillTableAll();
         tabEdit.setDisable(true);
     }
@@ -233,5 +235,28 @@ public class ReservationFormController {
         setResId();
         fillTableAll();
         tabEdit.setDisable(true);
+    }
+
+    public void cmbViewTypeOnAction(ActionEvent event) {
+        ObservableList<CustomResTM> resTMS = FXCollections.observableArrayList();
+        List<CustomReservationDTO> dtoList = reservationBO.getTypeOfReservation(cmbViewType.getValue());
+        for (CustomReservationDTO dto : dtoList){
+            resTMS.add(new CustomResTM(
+                    dto.getReservationID(),
+                    dto.getStudentNic(),
+                    dto.getStudentName(),
+                    dto.getRoomID(),
+                    dto.getRoomType(),
+                    dto.getCurrentDate(),
+                    dto.getKeyMoney(),
+                    dto.getKeyMoneyStatus(),
+                    dto.getExpDate()
+            ));
+
+        }
+
+        tblResView.refresh();
+        tblResView.setItems(resTMS);
+
     }
 }

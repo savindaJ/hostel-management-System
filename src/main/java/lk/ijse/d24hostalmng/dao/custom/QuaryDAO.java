@@ -10,4 +10,6 @@ public interface QuaryDAO extends SuperDAO {
     List<CustomReservationDTO> getAllReservation();
 
     void setSession(Session session);
+
+    List<CustomReservationDTO> getTypeOfList(String value);
 }
