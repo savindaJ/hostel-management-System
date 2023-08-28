@@ -61,7 +61,17 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public User find(String s) {
-        return null;
+        try {
+            Transaction transaction = session.beginTransaction();
+            User user = session.get(User.class, s);
+            transaction.commit();
+            return user;
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
+            return null;
+        }finally {
+            session.close();
+        }
     }
 
     @Override

@@ -51,4 +51,20 @@ public class UserBOImpl implements UserBO {
     public List<UserDTO> getAll() {
         return null;
     }
+
+    @Override
+    public UserDTO findCredential(String text) {
+        Session session = Configure.getInstance().getSession();
+        userDAO.setSession(session);
+        User user = userDAO.find(text);
+        if (user!=null){
+            return new UserDTO(
+                    user.getGmail(),
+                    user.getPassword()
+            );
+        }else {
+            return null;
+        }
+
+    }
 }

@@ -18,6 +18,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.d24hostalmng.bo.BOFactory;
+import lk.ijse.d24hostalmng.bo.custom.UserBO;
+import lk.ijse.d24hostalmng.dto.UserDTO;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -30,22 +33,34 @@ public class LoginFormController {
     public Hyperlink hypCreate;
     private int openCount = 0;
 
+    private final UserBO userBO = BOFactory.getInstance().getBO(BOFactory.BOType.USER);
+
     public void txtPasswordOnAction(ActionEvent actionEvent) {
     }
 
     public void btnLogInOnAction(MouseEvent event) throws IOException {
-        Parent root = null;
-        root = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("/view/dashbord-form.fxml")));
-        if (root != null) {
-            Scene subScene = new Scene(root);
-            Stage primaryStage = (Stage) this.root.getScene().getWindow();
-            primaryStage.setScene(subScene);
-            primaryStage.centerOnScreen();
 
-            TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
-            tt.setFromX(-subScene.getWidth());
-            tt.setToX(0);
-            tt.play();
+        UserDTO userDTO = userBO.findCredential(txtUserName.getText());
+        System.out.println(userDTO);
+
+        if (userDTO!=null){
+            if (userDTO.getGmail()!=null && textPassword.getText().equals(userDTO.getPassword())){
+                Parent root = null;
+                root = FXMLLoader.load(Objects.requireNonNull(this.getClass().getResource("/view/dashbord-form.fxml")));
+                if (root != null) {
+                    Scene subScene = new Scene(root);
+                    Stage primaryStage = (Stage) this.root.getScene().getWindow();
+                    primaryStage.setScene(subScene);
+                    primaryStage.centerOnScreen();
+
+                    TranslateTransition tt = new TranslateTransition(Duration.millis(350), subScene.getRoot());
+                    tt.setFromX(-subScene.getWidth());
+                    tt.setToX(0);
+                    tt.play();
+                }
+            }
+        }else {
+           lblWarning.setText("empty value or Invalid UserNAme or Password !");
         }
     }
 
