@@ -30,7 +30,17 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean update(Reservation reservation) {
-        return false;
+        try {
+            Transaction transaction = session.beginTransaction();
+            session.update(reservation);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            session.close();
+        }
     }
 
     @Override

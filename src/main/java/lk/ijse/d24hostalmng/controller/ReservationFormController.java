@@ -33,7 +33,7 @@ public class ReservationFormController {
     public JFXButton btnReservation;
     public Label lblStuId;
     public Label lblStuName;
-    public JFXComboBox cmbPStatusEdit;
+    public JFXComboBox<String> cmbPStatusEdit;
     public JFXTextField txtRoomTypeEdit;
     public JFXTextField txtKeyMoneyEdit;
     public JFXButton btnUpdate;
@@ -57,13 +57,29 @@ public class ReservationFormController {
     @FXML
     void initialize(){
         setResId();
+        updateStatus();
         setStudentIDs();
         setRoomIds();
         setPaymentStatus();
-        fillTableAll();
         setCellValueFactory();
         setWanningExpRes();
         setTableOnAction();
+        cmbPStatusEdit.getItems().setAll("PAID","PENDING","NOT-PAID");
+        fillTableAll();
+    }
+
+    private void updateStatus() {
+        Date date = Date.valueOf(LocalDate.now());
+        int date1 = date.getDate();
+        int month = date.getMonth();
+        for (CustomReservationDTO dto : reservationBO.getAllReservation()){
+            if (dto.getExpDate().equals(date) || dto.getExpDate().getMonth()==month && dto.getExpDate().getDate()<date1){
+                boolean update = reservationBO.updateStatus(dto.getReservationID());
+                if (update){
+                    setWanningExpRes();
+                }
+            }
+        }
     }
 
     private void setTableOnAction() {
@@ -73,7 +89,11 @@ public class ReservationFormController {
                 CustomResTM selectedItem = (CustomResTM) tblResView.getSelectionModel().getSelectedItem();
                 CustomReciveDTO reservationDTO = reservationBO.findReciveReservation(selectedItem.getReservationID());
                 lblStuId.setText(reservationDTO.getStudentNic());
-//                lblStuName.setText();
+                lblStuName.setText(reservationDTO.getStudent().getStudentNAme());
+                txtKeyMoneyEdit.setText(String.valueOf(reservationDTO.getRoom().getKeyMoney()));
+                txtRoomTypeEdit.setText(reservationDTO.getRoom().getRoomType());
+                cmbPStatusEdit.setValue(reservationDTO.getStatus());
+
             }
         });
     }
@@ -105,7 +125,7 @@ public class ReservationFormController {
                     dto.getKeyMoneyStatus(),
                     dto.getExpDate()
             ));
-            setWanningExpRes();
+
         }
         tblResView.setItems(resTMS);
     }
@@ -125,7 +145,7 @@ public class ReservationFormController {
                     } else {
 
                         if (item.getExpDate().equals(date) || item.getExpDate().getMonth()==month && item.getExpDate().getDate()<date1) {
-                            setStyle("-fx-background-color: #f1a2a2;");
+                                setStyle("-fx-background-color: #f1a2a2;");
                         } else {
                             setStyle("");
                         }

@@ -20,4 +20,5 @@ public interface ReservationBO extends CrudBO<ReservationDTO,String> {
 
     CustomReciveDTO findReciveReservation(String reservationID);
 
+    boolean updateStatus(String resId);
 }

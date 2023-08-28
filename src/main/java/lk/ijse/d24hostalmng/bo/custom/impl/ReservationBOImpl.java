@@ -67,7 +67,7 @@ public class ReservationBOImpl implements ReservationBO {
 
     @Override
     public boolean update(ReservationDTO reservationDTO) {
-        return false;
+       return false;
     }
 
     @Override
@@ -163,7 +163,20 @@ public class ReservationBOImpl implements ReservationBO {
                 reservation.getDate(),
                 reservation.getStatus(),
                 reservation.getStudent().getStudentNIC(),
-                reservation.getRoom().getRoomId()
+                reservation.getRoom().getRoomId(),
+                reservation.getStudent(),
+                reservation.getRoom()
         );
+    }
+
+    @Override
+    public boolean updateStatus(String resID) {
+        Session session = Configure.getInstance().getSession();
+        reservationDAO.setSession(session);
+        Reservation reservation = reservationDAO.find(resID);
+        reservation.setStatus("EXPIRED");
+        Session updateSession = Configure.getInstance().getSession();
+        reservationDAO.setSession(updateSession);
+        return reservationDAO.update(reservation);
     }
 }
