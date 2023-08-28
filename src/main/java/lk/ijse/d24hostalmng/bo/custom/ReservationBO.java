@@ -1,5 +1,6 @@
 package lk.ijse.d24hostalmng.bo.custom;
 
+import javafx.scene.control.Label;
 import lk.ijse.d24hostalmng.bo.CrudBO;
 import lk.ijse.d24hostalmng.dto.*;
 
@@ -21,4 +22,6 @@ public interface ReservationBO extends CrudBO<ReservationDTO,String> {
     CustomReciveDTO findReciveReservation(String reservationID);
 
     boolean updateStatus(String resId);
+
+    boolean updatePaymentAndExpireDate(String resId, String value);
 }

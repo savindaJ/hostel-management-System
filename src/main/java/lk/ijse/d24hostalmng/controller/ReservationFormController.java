@@ -51,6 +51,7 @@ public class ReservationFormController {
     public TableView tblResView;
     public Tab tabEdit;
     public Tab tabReseve;
+    public Label lblSelectResId;
 
     private final ReservationBO reservationBO = BOFactory.getInstance().getBO(BOFactory.BOType.RESERVATION);
 
@@ -93,6 +94,7 @@ public class ReservationFormController {
                 txtKeyMoneyEdit.setText(String.valueOf(reservationDTO.getRoom().getKeyMoney()));
                 txtRoomTypeEdit.setText(reservationDTO.getRoom().getRoomType());
                 cmbPStatusEdit.setValue(reservationDTO.getStatus());
+                lblSelectResId.setText(reservationDTO.getReservationID());
 
             }
         });
@@ -211,7 +213,13 @@ public class ReservationFormController {
     }
 
     public void btnUpdateOnAction(ActionEvent event) {
-
+      boolean update = reservationBO.updatePaymentAndExpireDate(lblSelectResId.getText(),cmbPStatusEdit.getValue());
+        if (update)
+            new CustomAlert(Alert.AlertType.CONFIRMATION,"Update ","Updated !","Student Update successful !").show();
+        else
+            new CustomAlert(Alert.AlertType.ERROR,"Update ","Not Update !","Update not successful !").show();
+        setResId();
+        fillTableAll();
     }
 
     public void btnDeleteOnAction(ActionEvent event) {

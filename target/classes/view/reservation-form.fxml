@@ -31,40 +31,40 @@
                               <Image url="@../assets/onebacg.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="334.0" fitWidth="245.0" layoutX="190.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="291.0" fitWidth="222.0" layoutX="190.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../assets/resrec.png" />
                            </image>
                         </ImageView>
                         <JFXComboBox fx:id="cmdStudentNic" labelFloat="true" layoutX="16.0" layoutY="33.0" onAction="#cmdStudentNicOnAction" prefHeight="30.0" prefWidth="143.0" promptText="Student NIC" />
-                        <Label layoutX="206.0" layoutY="46.0" text="Name :" textFill="WHITE">
+                        <Label layoutX="209.0" layoutY="17.0" text="Name :" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="205.0" layoutY="131.0" text="Address :" textFill="WHITE">
+                        <Label layoutX="209.0" layoutY="102.0" text="Address :" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label layoutX="207.0" layoutY="211.0" text="Contact :" textFill="WHITE">
+                        <Label layoutX="211.0" layoutY="185.0" text="Contact :" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblStudentName" alignment="CENTER" layoutX="197.0" layoutY="81.0" prefHeight="31.0" prefWidth="223.0" text="Savinda">
+                        <Label fx:id="lblStudentName" alignment="CENTER" layoutX="194.0" layoutY="51.0" prefHeight="31.0" prefWidth="204.0" text="----------------">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblStuAddress" alignment="CENTER" layoutX="200.0" layoutY="169.0" prefHeight="31.0" prefWidth="223.0" text="Matara">
+                        <Label fx:id="lblStuAddress" alignment="CENTER" layoutX="193.0" layoutY="139.0" prefHeight="31.0" prefWidth="206.0" text="------------------------">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblContact" alignment="CENTER" layoutX="197.0" layoutY="251.0" prefHeight="31.0" prefWidth="223.0" text="0716775507">
+                        <Label fx:id="lblContact" alignment="CENTER" layoutX="194.0" layoutY="221.0" prefHeight="31.0" prefWidth="207.0" text="--------------------">
                            <font>
-                              <Font name="System Bold" size="18.0" />
+                              <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
                         <JFXComboBox fx:id="cmbRoomId" labelFloat="true" layoutX="454.0" layoutY="32.0" onAction="#cmbRoomIdOnAction" prefHeight="30.0" prefWidth="170.0" promptText="Room ID" />
@@ -103,27 +103,27 @@
                               <Image url="@../assets/resbacground.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="14.0" layoutY="32.0" text="Student NIC :">
+                        <Label layoutX="13.0" layoutY="55.0" text="Student NIC :">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="14.0" layoutY="82.0" text="Student Name :">
+                        <Label layoutX="13.0" layoutY="105.0" text="Student Name :">
                            <font>
                               <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblStuId" alignment="TOP_CENTER" layoutX="74.0" layoutY="57.0" prefHeight="21.0" prefWidth="163.0" text="200223801534" textFill="#ff6060">
+                        <Label fx:id="lblStuId" alignment="TOP_CENTER" layoutX="73.0" layoutY="80.0" prefHeight="21.0" prefWidth="163.0" text="-------------------" textFill="#1835da">
                            <font>
-                              <Font size="15.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblStuName" alignment="TOP_CENTER" layoutX="94.0" layoutY="113.0" prefHeight="21.0" prefWidth="124.0" text="Savinda" textFill="#ff6060">
+                        <Label fx:id="lblStuName" alignment="TOP_CENTER" layoutX="93.0" layoutY="136.0" prefHeight="21.0" prefWidth="124.0" text="------------------" textFill="#1f28d0">
                            <font>
-                              <Font size="15.0" />
+                              <Font name="System Bold" size="15.0" />
                            </font>
                         </Label>
-                        <JFXComboBox fx:id="cmbPStatusEdit" labelFloat="true" layoutX="288.0" layoutY="28.0" prefHeight="30.0" prefWidth="143.0" promptText="Payment Status" />
+                        <JFXComboBox fx:id="cmbPStatusEdit" labelFloat="true" layoutX="319.0" layoutY="36.0" prefHeight="36.0" prefWidth="168.0" promptText="Payment Status" />
                         <JFXTextField fx:id="txtRoomTypeEdit" labelFloat="true" layoutX="24.0" layoutY="169.0" promptText="Room Type">
                            <font>
                               <Font size="15.0" />
@@ -132,7 +132,7 @@
                            <font>
                               <Font size="15.0" />
                            </font></JFXTextField>
-                        <JFXButton id="bevel" fx:id="btnUpdate" layoutX="626.0" layoutY="262.0" onAction="#btnUpdateOnAction" prefHeight="27.0" prefWidth="102.0" stylesheets="@../sheet/style.css" text="Update">
+                        <JFXButton id="bevel" fx:id="btnUpdate" layoutX="295.0" layoutY="254.0" onAction="#btnUpdateOnAction" prefHeight="30.0" prefWidth="108.0" stylesheets="@../sheet/style.css" text="Update">
                            <graphic>
                               <ImageView fitHeight="27.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -141,7 +141,7 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
-                        <JFXButton id="bevel" fx:id="btnDelete" layoutX="743.0" layoutY="262.0" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="100.0" stylesheets="@../sheet/style.css" text="Delete">
+                        <JFXButton id="bevel" fx:id="btnDelete" layoutX="412.0" layoutY="254.0" onAction="#btnDeleteOnAction" prefHeight="30.0" prefWidth="109.0" stylesheets="@../sheet/style.css" text="Delete">
                            <graphic>
                               <ImageView fitHeight="20.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -155,6 +155,16 @@
                               <Image url="@../assets/student.png" />
                            </image>
                         </ImageView>
+                        <Label layoutX="13.0" layoutY="14.0" text="Select RESID :">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblSelectResId" layoutX="109.0" layoutY="12.0" text="RES001" textFill="#f26767">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
             </content>
