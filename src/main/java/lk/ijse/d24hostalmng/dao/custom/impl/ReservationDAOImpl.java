@@ -3,6 +3,7 @@ package lk.ijse.d24hostalmng.dao.custom.impl;
 import lk.ijse.d24hostalmng.dao.custom.ReservationDAO;
 import lk.ijse.d24hostalmng.dto.CustomReservationDTO;
 import lk.ijse.d24hostalmng.entity.Reservation;
+import lk.ijse.d24hostalmng.entity.Room;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -45,7 +46,18 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean delete(String s) {
-        return false;
+        try {
+            Transaction transaction = session.beginTransaction();
+            Reservation reservation = session.get(Reservation.class, s);
+            session.delete(reservation);
+            transaction.commit();
+            return true;
+        }catch (Exception e){
+            e.printStackTrace();
+            return false;
+        }finally {
+            session.close();
+        }
     }
 
     @Override

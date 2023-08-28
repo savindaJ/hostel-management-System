@@ -67,6 +67,7 @@ public class ReservationFormController {
         setTableOnAction();
         cmbPStatusEdit.getItems().setAll("PAID","PENDING","NOT-PAID");
         fillTableAll();
+        tabEdit.setDisable(true);
     }
 
     private void updateStatus() {
@@ -95,7 +96,7 @@ public class ReservationFormController {
                 txtRoomTypeEdit.setText(reservationDTO.getRoom().getRoomType());
                 cmbPStatusEdit.setValue(reservationDTO.getStatus());
                 lblSelectResId.setText(reservationDTO.getReservationID());
-
+                tabEdit.setDisable(false);
             }
         });
     }
@@ -220,9 +221,17 @@ public class ReservationFormController {
             new CustomAlert(Alert.AlertType.ERROR,"Update ","Not Update !","Update not successful !").show();
         setResId();
         fillTableAll();
+        tabEdit.setDisable(true);
     }
 
     public void btnDeleteOnAction(ActionEvent event) {
-
+        boolean delete = reservationBO.delete(lblSelectResId.getText());
+        if (delete)
+            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete ","Deleted !","Student Delete successful !").show();
+        else
+            new CustomAlert(Alert.AlertType.ERROR,"Delete ","Not Delete !","Delete not successful !").show();
+        setResId();
+        fillTableAll();
+        tabEdit.setDisable(true);
     }
 }

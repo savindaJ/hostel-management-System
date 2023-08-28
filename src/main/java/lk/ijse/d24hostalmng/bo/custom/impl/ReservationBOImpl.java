@@ -72,7 +72,28 @@ public class ReservationBOImpl implements ReservationBO {
 
     @Override
     public boolean delete(String s) {
-        return false;
+        Session resSession = Configure.getInstance().getSession();
+        reservationDAO.setSession(resSession);
+        Reservation reservation = reservationDAO.find(s);
+
+        if (reservation!=null){
+            Session roomSession = Configure.getInstance().getSession();
+            roomDAO.setSession(roomSession);
+            Room room = reservation.getRoom();
+            room.setQty(room.getQty()+1);
+            boolean update = roomDAO.update(room);
+
+            if (update){
+                Session session = Configure.getInstance().getSession();
+                reservationDAO.setSession(session);
+                return reservationDAO.delete(s);
+
+            }else {
+                return false;
+            }
+        }else {
+            return false;
+        }
     }
 
     @Override
