@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.CreateFormController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="8.0" opacity="0.48" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../assets/admin.png" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="txtGmail" labelFloat="true" layoutX="76.0" layoutY="128.0" prefHeight="25.0" prefWidth="214.0" promptText="Enter your Gmail" />
+      <JFXPasswordField fx:id="txtPassword" labelFloat="true" layoutX="76.0" layoutY="201.0" prefHeight="25.0" prefWidth="214.0" promptText="Enter your Accunt Password" />
+      <JFXButton id="bevel" fx:id="btnCreate" layoutX="141.0" layoutY="274.0" onAction="#btnCreateOnAction" prefHeight="30.0" prefWidth="86.0" stylesheets="@../sheet/style.css" text="Create">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="353.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/student.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="340.0" layoutY="322.0" text="Create accunt and automate ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="124.0" layoutY="26.0" text="Create Accunt">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="#557de5" />
+                  <Stop color="#f83434" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="422.0" layoutY="346.0" text="in all task in your journy...">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -8,7 +8,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -23,6 +26,9 @@ public class LoginFormController {
     public JFXTextField txtUserName;
     public JFXPasswordField textPassword;
     public AnchorPane root;
+    public Label lblWarning;
+    public Hyperlink hypCreate;
+    private int openCount = 0;
 
     public void txtPasswordOnAction(ActionEvent actionEvent) {
     }
@@ -70,5 +76,25 @@ public class LoginFormController {
             scaleT.play();
             icon.setEffect(null);
         }
+    }
+
+    public void hypOnAction(ActionEvent event) {
+        openCount++;
+        Stage satge1=new Stage();
+        if (openCount==1){
+            try {
+                satge1.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/create-form.fxml"))));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            satge1.getIcons().add(new Image("assets/icons8-house-512.png"));
+            satge1.setTitle("hostel management system");
+            satge1.show();
+            satge1.setResizable(false);
+        }
+
+        satge1.setOnCloseRequest((w)->{
+            openCount = 0;
+        });
     }
 }

@@ -72,7 +72,7 @@
       <Line endX="54.0" layoutX="197.0" layoutY="322.0" startX="-100.0" />
       <Line endX="54.0" layoutX="506.0" layoutY="322.0" startX="-100.0" />
       <Line endX="54.0" layoutX="811.0" layoutY="322.0" startX="-100.0" />
-      <ImageView fitHeight="276.0" fitWidth="368.0" layoutX="527.0" layoutY="406.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="276.0" fitWidth="368.0" layoutX="461.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/detail.png" />
          </image>
@@ -82,10 +82,16 @@
             <Font name="Arial Unicode MS" size="74.0" />
          </font>
       </Label>
-      <ImageView fx:id="btnLogOut" fitHeight="59.0" fitWidth="48.0" layoutX="890.0" layoutY="39.0" onMouseClicked="#btnLogoutOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="btnLogOut" fitHeight="67.0" fitWidth="82.0" layoutX="887.0" layoutY="606.0" onMouseClicked="#btnLogoutOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/icons8-log-out-500.png" />
+            <Image url="@../assets/logout.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="btnLogOut1" fitHeight="61.0" fitWidth="57.0" layoutX="892.0" layoutY="27.0" onMouseClicked="#btnSettingOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/setting.png" />
+         </image>
+      </ImageView>
+      <Line endX="100.0" layoutX="252.0" layoutY="574.0" startX="-100.0" />
    </children>
 </AnchorPane>

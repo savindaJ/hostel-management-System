@@ -24,6 +24,9 @@ public class HomeFormController {
     public Label lblAvRoom;
     public Label lblTime;
     public ImageView btnLogOut;
+    public ImageView btnLogOut1;
+
+    private int openCount = 0;
 
     boolean run = true;
 
@@ -96,5 +99,25 @@ public class HomeFormController {
             scaleT.play();
             icon.setEffect(null);
         }
+    }
+
+    public void btnSettingOnAction(MouseEvent event) {
+        openCount++;
+        Stage satge1=new Stage();
+      if (openCount==1){
+          try {
+              satge1.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/setting-form.fxml"))));
+          } catch (IOException e) {
+              e.printStackTrace();
+          }
+          satge1.getIcons().add(new Image("assets/icons8-house-512.png"));
+          satge1.setTitle("hostel management system");
+          satge1.show();
+          satge1.setResizable(false);
+      }
+
+        satge1.setOnCloseRequest((w)->{
+            openCount = 0;
+        });
     }
 }
