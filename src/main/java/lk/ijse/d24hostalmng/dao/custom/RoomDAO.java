@@ -5,4 +5,8 @@ import lk.ijse.d24hostalmng.entity.Room;
 
 public interface RoomDAO extends CrudDAO<Room,String> {
     String getNextID();
+
+    String getRoomTotalForTypes();
+
+    String getAvilbleRoomCount();
 }

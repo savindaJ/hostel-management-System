@@ -8,6 +8,7 @@ import org.hibernate.Transaction;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.List;
 
 public class StudentDAOImpl implements StudentDAO {
@@ -87,5 +88,21 @@ public class StudentDAOImpl implements StudentDAO {
     @Override
     public void setSession(Session session) {
         this.session = session;
+    }
+
+    @Override
+    public String getStuToatal() {
+        try {
+            Transaction transaction = session.beginTransaction();
+            List resultList = session.createNativeQuery("SELECT Count(*) from student").getResultList();
+            BigInteger count = (BigInteger) resultList.get(0);
+            transaction.commit();
+            return String.valueOf(count);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }finally {
+            session.close();
+        }
     }
 }

@@ -8,6 +8,8 @@ import org.hibernate.Transaction;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 
 public class RoomDAOImpl implements RoomDAO {
@@ -97,5 +99,37 @@ public class RoomDAOImpl implements RoomDAO {
         transaction.commit();
         session.close();
         return newId;
+    }
+
+    @Override
+    public String getRoomTotalForTypes() {
+        try {
+            Transaction transaction = session.beginTransaction();
+            List resultList = session.createNativeQuery("SELECT COUNT(*) from room").getResultList();
+            BigInteger count = (BigInteger) resultList.get(0);
+            transaction.commit();
+            return String.valueOf(count);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public String getAvilbleRoomCount() {
+        try {
+            Transaction transaction = session.beginTransaction();
+            List resultList = session.createNativeQuery("SELECT SUM(room_qty) from room").getResultList();
+            BigDecimal count = (BigDecimal) resultList.get(0);
+            transaction.commit();
+            return String.valueOf(count);
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }finally {
+            session.close();
+        }
     }
 }

@@ -1,9 +1,6 @@
 package lk.ijse.d24hostalmng.bo;
 
-import lk.ijse.d24hostalmng.bo.custom.impl.ReservationBOImpl;
-import lk.ijse.d24hostalmng.bo.custom.impl.RoomBoImpl;
-import lk.ijse.d24hostalmng.bo.custom.impl.StudentBOImpl;
-import lk.ijse.d24hostalmng.bo.custom.impl.UserBOImpl;
+import lk.ijse.d24hostalmng.bo.custom.impl.*;
 
 public class BOFactory {
 
@@ -12,7 +9,7 @@ public class BOFactory {
     private BOFactory(){}
 
     public enum BOType{
-        STUDENT,ROOM,RESERVATION,USER
+        STUDENT,ROOM,RESERVATION,USER,HOME
     }
 
     public static BOFactory getInstance(){
@@ -29,6 +26,8 @@ public class BOFactory {
                 return (T) new ReservationBOImpl();
             case USER:
                 return (T) new UserBOImpl();
+            case HOME:
+                return (T) new HomeBOImpl();
             default:
                 return null;
         }

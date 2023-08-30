@@ -13,6 +13,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.d24hostalmng.bo.BOFactory;
+import lk.ijse.d24hostalmng.bo.custom.HomeBO;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -32,10 +34,19 @@ public class HomeFormController {
 
     private Thread thread;
 
+    private final HomeBO homeBO = BOFactory.getInstance().getBO(BOFactory.BOType.HOME);
+
     @FXML
     void initialize(){
         setCurrentTime();
         run = true;
+        setInDetail();
+    }
+
+    private void setInDetail() {
+        lblStuTotal.setText(String.valueOf(homeBO.getStuTotal()));
+        lblRoomTotal.setText(String.valueOf(homeBO.getRoomTotalForTypes()));
+        lblAvRoom.setText(homeBO.getAvlTotal());
     }
 
     private void setCurrentTime() {
