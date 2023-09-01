@@ -77,7 +77,7 @@ public class ReservationFormController {
         int date1 = date.getDate();
         int month = date.getMonth();
         for (CustomReservationDTO dto : reservationBO.getAllReservation()){
-            if (dto.getExpDate().equals(date) || dto.getExpDate().getMonth()==month && dto.getExpDate().getDate()<date1){
+            if (dto.getExpDate().getMonth()<month){
                 boolean update = reservationBO.updateStatus(dto.getReservationID());
                 if (update){
                     setWanningExpRes();
@@ -149,7 +149,7 @@ public class ReservationFormController {
                         setStyle("");
                     } else {
 
-                        if (item.getExpDate().equals(date) || item.getExpDate().getMonth()==month && item.getExpDate().getDate()<date1) {
+                        if (item.getExpDate().getMonth()<month) {
                                 setStyle("-fx-background-color: #f1a2a2;");
                         } else {
                             setStyle("");
