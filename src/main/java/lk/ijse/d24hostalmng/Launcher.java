@@ -10,6 +10,5 @@ import java.sql.Date;
 public class Launcher {
     public static void main(String[] args) {
         AppInitializer.main(args);
-//        Session session = Configure.getInstance().getSession();
     }
 }
