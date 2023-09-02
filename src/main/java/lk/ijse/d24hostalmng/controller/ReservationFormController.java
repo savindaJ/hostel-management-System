@@ -74,10 +74,9 @@ public class ReservationFormController {
 
     private void updateStatus() {
         Date date = Date.valueOf(LocalDate.now());
-        int date1 = date.getDate();
         int month = date.getMonth();
         for (CustomReservationDTO dto : reservationBO.getAllReservation()){
-            if (dto.getExpDate().getMonth()<month){
+            if (dto.getExpDate().getMonth()<month && !dto.getKeyMoneyStatus().equals("EXPIRED")){
                 boolean update = reservationBO.updateStatus(dto.getReservationID());
                 if (update){
                     setWanningExpRes();
