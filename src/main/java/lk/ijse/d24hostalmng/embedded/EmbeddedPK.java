@@ -17,4 +17,5 @@ public class EmbeddedPK implements Serializable {
     private String reservationID;
     @Column(name = "student_id")
     private String studentNic;
+//    remove embeddable
 }
