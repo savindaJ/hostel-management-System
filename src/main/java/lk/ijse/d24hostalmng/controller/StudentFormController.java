@@ -12,6 +12,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import lk.ijse.d24hostalmng.bo.BOFactory;
@@ -42,6 +43,8 @@ public class StudentFormController {
     public JFXButton btnUpdate;
     public JFXButton btnDelete;
     public JFXButton btnAdd;
+    public JFXComboBox cmbOption;
+    public JFXTextField txtSearch;
 
     private String nic;
     private String name;
@@ -202,5 +205,20 @@ public class StudentFormController {
         }
         initUI();
         fillTable();
+    }
+
+
+    public void mouseClicked(MouseEvent event) {
+    }
+
+    public void mouseEnterd(MouseEvent event) {
+    }
+
+    public void mouseExit(MouseEvent event) {
+
+    }
+
+    public void txtSearchKeyTyped(KeyEvent keyEvent) {
+
     }
 }

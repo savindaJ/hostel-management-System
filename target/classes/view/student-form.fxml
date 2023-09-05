@@ -23,9 +23,9 @@
          <font>
             <Font size="16.0" />
          </font></JFXTextField>
-      <Label layoutX="405.0" layoutY="21.0" text="Student Manage" textFill="#7e89ff">
+      <Label layoutX="759.0" layoutY="314.0" text="Student Manage" textFill="#1927a4">
          <font>
-            <Font name="System Bold" size="22.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
       <JFXTextField fx:id="txtStudentName" disable="true" labelFloat="true" layoutX="358.0" layoutY="100.0" prefHeight="40.0" prefWidth="200.0" promptText="Student Name">
@@ -91,6 +91,13 @@
       <ImageView fitHeight="203.0" fitWidth="259.0" layoutX="652.0" layoutY="105.0" opacity="0.72" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/student.png" />
+         </image>
+      </ImageView>
+      <JFXComboBox fx:id="cmbOption" layoutX="32.0" layoutY="33.0" prefHeight="25.0" prefWidth="87.0" />
+      <JFXTextField fx:id="txtSearch" layoutX="134.0" layoutY="33.0" onKeyTyped="#txtSearchKeyTyped" prefHeight="25.0" prefWidth="156.0" />
+      <ImageView fitHeight="62.0" fitWidth="27.0" layoutX="305.0" layoutY="32.0" onMouseClicked="#mouseClicked" onMouseEntered="#mouseEnterd" onMouseExited="#mouseExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/icons8-search-500.png" />
          </image>
       </ImageView>
    </children>
