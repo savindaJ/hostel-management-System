@@ -35,10 +35,11 @@ public class LoginFormController {
 
     private final UserBO userBO = BOFactory.getInstance().getBO(BOFactory.BOType.USER);
 
-    public void txtPasswordOnAction(ActionEvent actionEvent) {
+    public void txtPasswordOnAction() throws IOException {
+        btnLogInOnAction();
     }
 
-    public void btnLogInOnAction(MouseEvent event) throws IOException {
+    public void btnLogInOnAction() throws IOException {
 
         UserDTO userDTO = userBO.findCredential(txtUserName.getText());
         System.out.println(userDTO);
