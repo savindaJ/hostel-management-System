@@ -142,47 +142,64 @@ public class StudentFormController {
         btnUpdate.setDisable(true);
     }
 
-    private void setDetail() {
-        nic = txtStudentNic.getText();
-        name = txtStudentName.getText();
-        address = txtStudentAddress.getText();
-        contact = txtStudentContact.getText();
-        dob = Date.valueOf(datePicker.getValue());
-        gender = cmbGender.getValue();
+    private boolean setDetail() {
+       try {
+           nic = txtStudentNic.getText();
+           name = txtStudentName.getText();
+           address = txtStudentAddress.getText();
+           contact = txtStudentContact.getText();
+           dob = Date.valueOf(datePicker.getValue());
+           gender = cmbGender.getValue();
+           return true;
+       }catch (Exception e){
+           return false;
+       }
     }
 
     public void btnAddOnAction(ActionEvent event) {
-        setDetail();
-        boolean save = studentBO.save(new StudentDTO(nic, name, address, contact, dob, gender));
+        if (setDetail()){
+            boolean save = studentBO.save(new StudentDTO(nic, name, address, contact, dob, gender));
 
-        if (save)
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Save ","Saved !","Student Save successful !").show();
-        else
-            new CustomAlert(Alert.AlertType.ERROR,"Save ","Not Saved !","Save not successful !").show();
+            if (save)
+                new CustomAlert(Alert.AlertType.CONFIRMATION,"Save ","Saved !","Student Save successful !").show();
+            else
+                new CustomAlert(Alert.AlertType.ERROR,"Save ","Not Saved !","Save not successful !").show();
+
+        }else {
+            new CustomAlert(Alert.AlertType.ERROR,"Invalid ! ","Not valid values !","please enter valid values !").show();
+        }
         initUI();
         fillTable();
     }
 
     public void btnDeleteOnAction(ActionEvent event) {
 
-        boolean delete = studentBO.delete(txtStudentNic.getText());
+        if (!txtStudentNic.getText().isEmpty()){
+            boolean delete = studentBO.delete(txtStudentNic.getText());
 
-        if (delete)
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete ","Deleted !","Student Delete successful !").show();
-        else
-            new CustomAlert(Alert.AlertType.ERROR,"Delete ","Not Delete !","Delete not successful !").show();
+            if (delete)
+                new CustomAlert(Alert.AlertType.CONFIRMATION,"Delete ","Deleted !","Student Delete successful !").show();
+            else
+                new CustomAlert(Alert.AlertType.ERROR,"Delete ","Not Delete !","Delete not successful !").show();
+        }else {
+            new CustomAlert(Alert.AlertType.ERROR,"Delete ","Not Delete !","Not selected student id !").show();
+        }
         initUI();
         fillTable();
     }
 
     public void btnUpdateOnAction(ActionEvent event) {
-        setDetail();
-        boolean update = studentBO.update(new StudentDTO(nic, name, address, contact, dob, gender));
+        if (setDetail()){
+            boolean update = studentBO.update(new StudentDTO(nic, name, address, contact, dob, gender));
 
-        if (update)
-            new CustomAlert(Alert.AlertType.CONFIRMATION,"Update ","Updated !","Student Update successful !").show();
-        else
-            new CustomAlert(Alert.AlertType.ERROR,"Update ","Not Update !","Update not successful !").show();
+            if (update)
+                new CustomAlert(Alert.AlertType.CONFIRMATION,"Update ","Updated !","Student Update successful !").show();
+            else
+                new CustomAlert(Alert.AlertType.ERROR,"Update ","Not Update !","Update not successful !").show();
+
+        }else {
+            new CustomAlert(Alert.AlertType.ERROR,"Invalid ! ","Not valid values !","please enter valid values !").show();
+        }
         initUI();
         fillTable();
     }
