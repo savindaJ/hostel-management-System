@@ -3,6 +3,7 @@ package lk.ijse.d24hostalmng.controller;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.animation.ScaleTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -12,9 +13,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
+import javafx.util.Duration;
 import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.StudentBO;
 import lk.ijse.d24hostalmng.dto.StudentDTO;
@@ -43,7 +48,7 @@ public class StudentFormController {
     public JFXButton btnUpdate;
     public JFXButton btnDelete;
     public JFXButton btnAdd;
-    public JFXComboBox cmbOption;
+    public JFXComboBox<String> cmbOption;
     public JFXTextField txtSearch;
 
     private String nic;
@@ -61,6 +66,7 @@ public class StudentFormController {
         setGender();
         fillTable();
         setCellValueFactory();
+        cmbOption.getItems().setAll("NAME","ADDRESS","NIC");
         tblStudentDetail.setOnMouseClicked((MouseEvent event) -> {
             if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2){
                 StudentTM selectedItem = (StudentTM) tblStudentDetail.getSelectionModel().getSelectedItem();
@@ -209,12 +215,37 @@ public class StudentFormController {
 
 
     public void mouseClicked(MouseEvent event) {
+        txtSearch.setVisible(true);
+        cmbOption.setVisible(true);
     }
 
     public void mouseEnterd(MouseEvent event) {
+        if (event.getSource() instanceof ImageView) {
+            ImageView icon = (ImageView) event.getSource();
+
+            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
+            scaleT.setToX(1.2);
+            scaleT.setToY(1.2);
+            scaleT.play();
+
+            DropShadow glow = new DropShadow();
+            glow.setColor(Color.CORNFLOWERBLUE);
+            glow.setWidth(15);
+            glow.setHeight(15);
+            glow.setRadius(15);
+            icon.setEffect(glow);
+        }
     }
 
     public void mouseExit(MouseEvent event) {
+        if (event.getSource() instanceof ImageView) {
+            ImageView icon = (ImageView) event.getSource();
+            ScaleTransition scaleT = new ScaleTransition(Duration.millis(200), icon);
+            scaleT.setToX(1);
+            scaleT.setToY(1);
+            scaleT.play();
+            icon.setEffect(null);
+        }
 
     }
 

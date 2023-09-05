@@ -93,9 +93,9 @@
             <Image url="@../assets/student.png" />
          </image>
       </ImageView>
-      <JFXComboBox fx:id="cmbOption" layoutX="32.0" layoutY="33.0" prefHeight="25.0" prefWidth="87.0" />
-      <JFXTextField fx:id="txtSearch" layoutX="134.0" layoutY="33.0" onKeyTyped="#txtSearchKeyTyped" prefHeight="25.0" prefWidth="156.0" />
-      <ImageView fitHeight="62.0" fitWidth="27.0" layoutX="305.0" layoutY="32.0" onMouseClicked="#mouseClicked" onMouseEntered="#mouseEnterd" onMouseExited="#mouseExit" pickOnBounds="true" preserveRatio="true">
+      <JFXComboBox fx:id="cmbOption" layoutX="32.0" layoutY="33.0" prefHeight="25.0" prefWidth="128.0" visible="false" />
+      <JFXTextField fx:id="txtSearch" layoutX="178.0" layoutY="33.0" onKeyTyped="#txtSearchKeyTyped" prefHeight="25.0" prefWidth="156.0" visible="false" />
+      <ImageView fitHeight="62.0" fitWidth="27.0" layoutX="365.0" layoutY="32.0" onMouseClicked="#mouseClicked" onMouseEntered="#mouseEnterd" onMouseExited="#mouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/icons8-search-500.png" />
          </image>
