@@ -39,7 +39,7 @@
             <Image url="@../assets/boxDetail.png" />
          </image>
       </ImageView>
-      <Label layoutX="107.0" layoutY="227.0" text="Type of Romms" textFill="#084b8d">
+      <Label layoutX="107.0" layoutY="227.0" text="Type of Rooms" textFill="#084b8d">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
