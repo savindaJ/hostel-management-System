@@ -37,7 +37,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="txtUserName" focusColor="BLACK" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="User name" unFocusColor="#1b72a1">
+      <JFXTextField fx:id="txtUserName" focusColor="BLACK" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="Gmail" text="Gmail" unFocusColor="#1b72a1">
          <font>
             <Font size="17.0" />
          </font>
