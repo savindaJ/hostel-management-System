@@ -264,7 +264,20 @@ public class StudentFormController {
             studentTMS.clear();
             for (StudentDTO dto : currentStuList){
                 if (cmbOption.getValue().equals("NAME")){
+                    studentTMS.clear();
                     if (dto.getStudentNAme().equals(txtSearch.getText())){
+                        studentTMS.add(new StudentTM(
+                                dto.getStudentNIC(),
+                                dto.getStudentNAme(),
+                                dto.getAddress(),
+                                dto.getContact(),
+                                dto.getDob(),
+                                dto.getGender()
+                        ));
+                    }
+                }else if (cmbOption.getValue().equals("ADDRESS")){
+                    studentTMS.clear();
+                    if (dto.getAddress().equals(txtSearch.getText())){
                         studentTMS.add(new StudentTM(
                                 dto.getStudentNIC(),
                                 dto.getStudentNAme(),
