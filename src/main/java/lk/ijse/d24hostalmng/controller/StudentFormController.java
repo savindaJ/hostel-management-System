@@ -29,6 +29,8 @@ import lk.ijse.d24hostalmng.util.CustomAlert;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StudentFormController {
 
@@ -59,6 +61,10 @@ public class StudentFormController {
     private String gender;
 
     private final StudentBO studentBO = BOFactory.getInstance().getBO(BOFactory.BOType.STUDENT);
+
+    private List<StudentDTO> currentStuList = new ArrayList<>();
+
+    private ObservableList<StudentTM> studentTMS = FXCollections.observableArrayList();
 
     @FXML
     void initialize(){
@@ -106,6 +112,7 @@ public class StudentFormController {
     private void fillTable() {
         ObservableList<StudentTM> studentTMS = FXCollections.observableArrayList();
         for (StudentDTO dto : studentBO.getAll()){
+            currentStuList.add(dto);
             studentTMS.add(new StudentTM(
                     dto.getStudentNIC(),
                     dto.getStudentNAme(),
@@ -213,7 +220,6 @@ public class StudentFormController {
         fillTable();
     }
 
-
     public void mouseClicked(MouseEvent event) {
         txtSearch.setVisible(true);
         cmbOption.setVisible(true);
@@ -250,6 +256,44 @@ public class StudentFormController {
     }
 
     public void txtSearchKeyTyped(KeyEvent keyEvent) {
+        studentTMS.clear();
+        if (txtSearch.getText().equals("")){
+            fillTable();
+        }else {
+            for (StudentDTO dto : currentStuList){
+                if (cmbOption.getValue().equals("NAME")){
 
+                    String studentNAme = dto.getStudentNAme();
+
+                    for (int i = 0; i < txtSearch.getText().length(); i++) {
+
+                        if (studentNAme.charAt(i) == txtSearch.getText().charAt(i)){
+                            studentTMS.add(new StudentTM(
+                                    dto.getStudentNIC(),
+                                    dto.getStudentNAme(),
+                                    dto.getAddress(),
+                                    dto.getContact(),
+                                    dto.getDob(),
+                                    dto.getGender()
+                            ));
+                            break;
+                        }
+                    }
+                   /* if (dto.getStudentNAme().equals(txtSearch.getText())){
+                        studentTMS.add(new StudentTM(
+                                dto.getStudentNIC(),
+                                dto.getStudentNAme(),
+                                dto.getAddress(),
+                                dto.getContact(),
+                                dto.getDob(),
+                                dto.getGender()
+                        ));
+                        tblStudentDetail.setItems(studentTMS);
+                        break;
+                    }*/
+                }
+            }
+            tblStudentDetail.setItems(studentTMS);
+        }
     }
 }
