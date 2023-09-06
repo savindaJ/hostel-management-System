@@ -9,6 +9,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import lk.ijse.d24hostalmng.bo.BOFactory;
 import lk.ijse.d24hostalmng.bo.custom.ReservationBO;
@@ -21,7 +22,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 public class ReservationFormController {
-    public JFXComboBox<String> cmdStudentNic;
     public Label lblStudentName;
     public Label lblStuAddress;
     public Label lblContact;
@@ -53,8 +53,12 @@ public class ReservationFormController {
     public Tab tabReseve;
     public Label lblSelectResId;
     public JFXComboBox<String> cmbViewType;
+    public ComboBox<String> cmbSid;
 
     private final ReservationBO reservationBO = BOFactory.getInstance().getBO(BOFactory.BOType.RESERVATION);
+
+
+    private ObservableList<String> idList = FXCollections.observableArrayList();
 
     @FXML
     void initialize(){
@@ -70,6 +74,27 @@ public class ReservationFormController {
         cmbViewType.getItems().setAll("ALL","PAID","PENDING","EXPIRED");
         fillTableAll();
         tabEdit.setDisable(true);
+        cmbSid.setOnKeyReleased(event -> handleAutoComplete());
+    }
+
+    private void handleAutoComplete() {
+        String enteredText = cmbSid.getEditor().getText();
+        ObservableList<String> filteredItems = FXCollections.observableArrayList();
+
+        if (enteredText.isEmpty()) {
+            for (String ids : reservationBO.getStudentIDs()){
+                idList.add(ids);
+            }
+            cmbSid.setItems(idList);
+        } else {
+            for (String item : idList) {
+                if (item.toLowerCase().contains(enteredText.toLowerCase())) {
+                    filteredItems.add(item);
+                }
+            }
+        }
+
+        cmbSid.setItems(filteredItems);
     }
 
     private void updateStatus() {
@@ -172,22 +197,14 @@ public class ReservationFormController {
     }
 
     private void setStudentIDs() {
-        ObservableList<String> idList = FXCollections.observableArrayList();
         for (String ids : reservationBO.getStudentIDs()){
             idList.add(ids);
         }
-        cmdStudentNic.setItems(idList);
+        cmbSid.setItems(idList);
     }
 
     private void setResId() {
         lblResId.setText(reservationBO.getNextResID());
-    }
-
-    public void cmdStudentNicOnAction(ActionEvent event) {
-        StudentDTO studentDTO = reservationBO.getStudent(cmdStudentNic.getValue());
-        lblStudentName.setText(studentDTO.getStudentNAme());
-        lblStuAddress.setText(studentDTO.getAddress());
-        lblContact.setText(studentDTO.getContact());
     }
 
     public void cmbRoomIdOnAction(ActionEvent event) {
@@ -202,7 +219,7 @@ public class ReservationFormController {
                 lblResId.getText(),
                 LocalDate.now(),
                 cmbPaymentStatus.getValue(),
-                cmdStudentNic.getValue(),
+                cmbSid.getValue(),
                 cmbRoomId.getValue()
         ));
 
@@ -257,5 +274,21 @@ public class ReservationFormController {
         tblResView.refresh();
         tblResView.setItems(resTMS);
 
+    }
+
+    public void cmbSidOnAction(ActionEvent event) {
+        if (cmbSid.getEditor().getText().equals("")){
+            return;
+        }
+        StudentDTO studentDTO = reservationBO.getStudent(cmbSid.getValue());
+        lblStudentName.setText(studentDTO.getStudentNAme());
+        lblStuAddress.setText(studentDTO.getAddress());
+        lblContact.setText(studentDTO.getContact());
+    }
+
+    public void cmbSidKeyTyped(KeyEvent keyEvent) {
+        if (cmbSid.getEditor().getText().equals("")){
+            setStudentIDs();
+        }
     }
 }

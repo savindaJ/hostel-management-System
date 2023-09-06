@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="700.0" prefWidth="980.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.d24hostalmng.controller.ReservationFormController">
@@ -36,7 +38,6 @@
                               <Image url="@../assets/resrec.png" />
                            </image>
                         </ImageView>
-                        <JFXComboBox fx:id="cmdStudentNic" editable="true" labelFloat="true" layoutX="16.0" layoutY="33.0" onAction="#cmdStudentNicOnAction" prefHeight="30.0" prefWidth="143.0" promptText="Student NIC" />
                         <Label layoutX="209.0" layoutY="17.0" text="Name :" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
@@ -90,6 +91,11 @@
                               </ImageView>
                            </graphic>
                         </JFXButton>
+                        <VBox layoutX="14.0" layoutY="17.0" prefHeight="200.0" prefWidth="152.0">
+                           <children>
+                              <ComboBox fx:id="cmbSid" editable="true" onAction="#cmbSidOnAction" onKeyTyped="#cmbSidKeyTyped" prefWidth="150.0" />
+                           </children>
+                        </VBox>
                      </children>
                   </AnchorPane>
             </content>
