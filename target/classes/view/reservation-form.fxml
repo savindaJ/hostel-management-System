@@ -36,7 +36,7 @@
                               <Image url="@../assets/resrec.png" />
                            </image>
                         </ImageView>
-                        <JFXComboBox fx:id="cmdStudentNic" labelFloat="true" layoutX="16.0" layoutY="33.0" onAction="#cmdStudentNicOnAction" prefHeight="30.0" prefWidth="143.0" promptText="Student NIC" />
+                        <JFXComboBox fx:id="cmdStudentNic" editable="true" labelFloat="true" layoutX="16.0" layoutY="33.0" onAction="#cmdStudentNicOnAction" prefHeight="30.0" prefWidth="143.0" promptText="Student NIC" />
                         <Label layoutX="209.0" layoutY="17.0" text="Name :" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="20.0" />
