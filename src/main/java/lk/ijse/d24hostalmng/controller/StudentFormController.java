@@ -152,7 +152,7 @@ public class StudentFormController {
         txtStudentContact.clear();
         txtStudentName.clear();
         txtStudentNic.clear();
-        cmbGender.getItems().clear();
+        cmbGender.setValue("");
         btnDelete.setDisable(true);
         btnAdd.setDisable(true);
         btnUpdate.setDisable(true);
@@ -256,15 +256,28 @@ public class StudentFormController {
     }
 
     public void txtSearchKeyTyped(KeyEvent keyEvent) {
+
         if (txtSearch.getText().equals("")){
             fillTable();
-            studentTMS.clear();
         }else {
+            studentTMS.removeAll();
+            studentTMS.clear();
             for (StudentDTO dto : currentStuList){
                 if (cmbOption.getValue().equals("NAME")){
-
+                    if (dto.getStudentNAme().equals(txtSearch.getText())){
+                        studentTMS.add(new StudentTM(
+                                dto.getStudentNIC(),
+                                dto.getStudentNAme(),
+                                dto.getAddress(),
+                                dto.getContact(),
+                                dto.getDob(),
+                                dto.getGender()
+                        ));
+                    }
                 }
             }
+            tblStudentDetail.refresh();
+            tblStudentDetail.setItems(studentTMS);
         }
     }
 }

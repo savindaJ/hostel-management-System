@@ -40,7 +40,7 @@
          <font>
             <Font size="16.0" />
          </font></JFXTextField>
-      <JFXComboBox fx:id="cmbGender" disable="true" labelFloat="true" layoutX="365.0" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" promptText="Gender" />
+      <JFXComboBox fx:id="cmbGender" disable="true" editable="true" labelFloat="true" layoutX="365.0" layoutY="300.0" prefHeight="40.0" prefWidth="200.0" promptText="Gender" />
       <TableView fx:id="tblStudentDetail" layoutX="60.0" layoutY="380.0" prefHeight="252.0" prefWidth="850.0">
         <columns>
           <TableColumn fx:id="colNIC" prefWidth="147.0" text="NIC" />
