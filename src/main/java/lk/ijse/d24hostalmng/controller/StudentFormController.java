@@ -256,44 +256,29 @@ public class StudentFormController {
     }
 
     public void txtSearchKeyTyped(KeyEvent keyEvent) {
-        studentTMS.clear();
         if (txtSearch.getText().equals("")){
             fillTable();
+            studentTMS.clear();
         }else {
             for (StudentDTO dto : currentStuList){
                 if (cmbOption.getValue().equals("NAME")){
 
-                    String studentNAme = dto.getStudentNAme();
-
-                    for (int i = 0; i < txtSearch.getText().length(); i++) {
-
-                        if (studentNAme.charAt(i) == txtSearch.getText().charAt(i)){
-                            studentTMS.add(new StudentTM(
-                                    dto.getStudentNIC(),
-                                    dto.getStudentNAme(),
-                                    dto.getAddress(),
-                                    dto.getContact(),
-                                    dto.getDob(),
-                                    dto.getGender()
-                            ));
-                            break;
-                        }
-                    }
-                   /* if (dto.getStudentNAme().equals(txtSearch.getText())){
-                        studentTMS.add(new StudentTM(
-                                dto.getStudentNIC(),
-                                dto.getStudentNAme(),
-                                dto.getAddress(),
-                                dto.getContact(),
-                                dto.getDob(),
-                                dto.getGender()
-                        ));
-                        tblStudentDetail.setItems(studentTMS);
-                        break;
-                    }*/
                 }
             }
-            tblStudentDetail.setItems(studentTMS);
         }
     }
 }
+
+/*
+if (dto.getStudentNAme().equals(txtSearch.getText())){
+         studentTMS.add(new StudentTM(
+                 dto.getStudentNIC(),
+                 dto.getStudentNAme(),
+                 dto.getAddress(),
+                 dto.getContact(),
+                 dto.getDob(),
+                 dto.getGender()
+         ));
+         tblStudentDetail.setItems(studentTMS);
+         break;
+                    }*/
