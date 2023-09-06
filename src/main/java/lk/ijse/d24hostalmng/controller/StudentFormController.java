@@ -287,24 +287,21 @@ public class StudentFormController {
                                 dto.getGender()
                         ));
                     }
+                }else {
+                    if (dto.getStudentNIC().equals(txtSearch.getText())){
+                        studentTMS.add(new StudentTM(
+                                dto.getStudentNIC(),
+                                dto.getStudentNAme(),
+                                dto.getAddress(),
+                                dto.getContact(),
+                                dto.getDob(),
+                                dto.getGender()
+                        ));
+                    }
                 }
             }
-            tblStudentDetail.refresh();
             tblStudentDetail.setItems(studentTMS);
+            tblStudentDetail.refresh();
         }
     }
 }
-
-/*
-if (dto.getStudentNAme().equals(txtSearch.getText())){
-         studentTMS.add(new StudentTM(
-                 dto.getStudentNIC(),
-                 dto.getStudentNAme(),
-                 dto.getAddress(),
-                 dto.getContact(),
-                 dto.getDob(),
-                 dto.getGender()
-         ));
-         tblStudentDetail.setItems(studentTMS);
-         break;
-                    }*/
