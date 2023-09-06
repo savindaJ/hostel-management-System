@@ -11,7 +11,7 @@ import javafx.util.Duration;
 public class AppInitializer extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/dashbord-form.fxml")));
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/view/Login-form.fxml")));
         primaryStage.setScene(scene);
         primaryStage.setTitle("hostel management system");
         primaryStage.getIcons().add(new Image("/assets/icons8-house-512.png"));
