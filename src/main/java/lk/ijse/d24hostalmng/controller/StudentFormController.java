@@ -59,6 +59,7 @@ public class StudentFormController {
     private String contact;
     private Date dob;
     private String gender;
+    private boolean visible = true;
 
     private final StudentBO studentBO = BOFactory.getInstance().getBO(BOFactory.BOType.STUDENT);
 
@@ -221,8 +222,19 @@ public class StudentFormController {
     }
 
     public void mouseClicked(MouseEvent event) {
-        txtSearch.setVisible(true);
-        cmbOption.setVisible(true);
+        if (visible){
+            txtSearch.clear();
+            cmbOption.setValue("");
+            txtSearch.setVisible(true);
+            cmbOption.setVisible(true);
+            visible = false;
+        }else {
+            txtSearch.clear();
+            cmbOption.setValue("");
+            txtSearch.setVisible(false);
+            cmbOption.setVisible(false);
+            visible = true;
+        }
     }
 
     public void mouseEnterd(MouseEvent event) {
