@@ -39,6 +39,19 @@ public class LoginFormController {
 
     private final UserBO userBO = BOFactory.getInstance().getBO(BOFactory.BOType.USER);
 
+    @FXML
+    void initialize(){
+
+        textField.setManaged(false);
+        textField.managedProperty().bind(checkBox.selectedProperty());
+        textField.visibleProperty().bind(checkBox.selectedProperty());
+
+        textPassword.managedProperty().bind(checkBox.selectedProperty().not());
+        textPassword.visibleProperty().bind(checkBox.selectedProperty().not());
+
+        textField.textProperty().bindBidirectional(textPassword.textProperty());
+    }
+
     public void txtPasswordOnAction() throws IOException {
         btnLogInOnAction();
     }
