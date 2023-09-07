@@ -39,7 +39,7 @@ public class StudentFormController {
     public JFXTextField txtStudentAddress;
     public JFXTextField txtStudentContact;
     public JFXComboBox<String> cmbGender;
-    public TableView tblStudentDetail;
+    public TableView<StudentTM> tblStudentDetail;
     public TableColumn colNIC;
     public TableColumn colName;
     public TableColumn colAddress;
@@ -255,7 +255,7 @@ public class StudentFormController {
 
     }
 
-    public void txtSearchKeyTyped(KeyEvent keyEvent) {
+    /*public void txtSearchKeyTyped(KeyEvent keyEvent) {
 
         if (txtSearch.getText().equals("")){
             fillTable();
@@ -301,7 +301,52 @@ public class StudentFormController {
                 }
             }
             tblStudentDetail.setItems(studentTMS);
+        }
+    }*/
+
+    public void txtSearchKeyRelease(KeyEvent keyEvent) {
+        if (txtSearch.getText().equals("")){
+            fillTable();
+        }else {
+
+            for (StudentDTO dto : currentStuList){
+                if (cmbOption.getValue().equals("NAME")){
+                    if (dto.getStudentNAme().equals(txtSearch.getText())){
+                        studentTMS.add(new StudentTM(
+                                dto.getStudentNIC(),
+                                dto.getStudentNAme(),
+                                dto.getAddress(),
+                                dto.getContact(),
+                                dto.getDob(),
+                                dto.getGender()
+                        ));
+                    }
+                }else if (cmbOption.getValue().equals("ADDRESS")){
+                    if (dto.getAddress().equals(txtSearch.getText())){
+                        studentTMS.add(new StudentTM(
+                                dto.getStudentNIC(),
+                                dto.getStudentNAme(),
+                                dto.getAddress(),
+                                dto.getContact(),
+                                dto.getDob(),
+                                dto.getGender()
+                        ));
+                    }
+                }else {
+                    if (dto.getStudentNIC().equals(txtSearch.getText())){
+                        studentTMS.add(new StudentTM(
+                                dto.getStudentNIC(),
+                                dto.getStudentNAme(),
+                                dto.getAddress(),
+                                dto.getContact(),
+                                dto.getDob(),
+                                dto.getGender()
+                        ));
+                    }
+                }
+            }
             tblStudentDetail.refresh();
+            tblStudentDetail.setItems(studentTMS);
         }
     }
 }

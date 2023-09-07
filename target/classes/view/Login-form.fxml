@@ -90,7 +90,10 @@
             <Font size="14.0" />
          </font>
       </Hyperlink>
-      <CheckBox fx:id="checkBox" layoutX="781.0" layoutY="419.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="59.0" text="Show" />
+      <CheckBox fx:id="checkBox" layoutX="781.0" layoutY="419.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="59.0" text="Show" textFill="#183b80">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></CheckBox>
       <JFXTextField fx:id="textField" layoutX="776.0" layoutY="369.0" prefHeight="40.0" prefWidth="273.0" visible="false">
          <font>
             <Font name="System Bold" size="17.0" />
