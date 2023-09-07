@@ -19,6 +19,9 @@ public class CreateFormController {
     private final UserBO userBO = BOFactory.getInstance().getBO(BOFactory.BOType.USER);
 
     public void btnCreateOnAction(ActionEvent event) {
+        if (txtGmail.getText().equals("") && txtPassword.getText().equals("")|| txtPassword.getText().equals("")){
+            return;
+        }
         boolean save = userBO.save(new UserDTO(
                 txtGmail.getText(),
                 txtPassword.getText()
