@@ -38,27 +38,27 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <JFXTextField fx:id="txtUserName" focusColor="BLACK" labelFloat="true" layoutX="775.0" layoutY="280.0" prefHeight="40.0" prefWidth="276.0" promptText="Gmail" unFocusColor="#1b72a1">
+      <JFXTextField fx:id="txtUserName" focusColor="BLACK" labelFloat="true" layoutX="775.0" layoutY="315.0" prefHeight="40.0" prefWidth="276.0" promptText="Gmail" unFocusColor="#1b72a1">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="textPassword" focusColor="BLACK" labelFloat="true" layoutX="776.0" layoutY="369.0" onAction="#txtPasswordOnAction" prefHeight="40.0" prefWidth="276.0" promptText="Password" unFocusColor="#1b72a1">
+      <JFXPasswordField fx:id="textPassword" focusColor="BLACK" labelFloat="true" layoutX="776.0" layoutY="404.0" onAction="#txtPasswordOnAction" prefHeight="40.0" prefWidth="276.0" promptText="Password" unFocusColor="#1b72a1">
          <font>
             <Font name="System Bold" size="17.0" />
          </font>
       </JFXPasswordField>
-      <ImageView fitHeight="30.0" fitWidth="22.0" layoutX="1028.0" layoutY="289.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="22.0" layoutX="1028.0" layoutY="324.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/user.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="30.0" fitWidth="22.0" layoutX="1028.0" layoutY="377.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="30.0" fitWidth="22.0" layoutX="1028.0" layoutY="412.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/lock.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="179.0" layoutX="836.0" layoutY="465.0" onMouseClicked="#btnLogInOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="52.0" fitWidth="179.0" layoutX="836.0" layoutY="492.0" onMouseClicked="#btnLogInOnAction" onMouseEntered="#mouseEnterImg" onMouseExited="#mouseExitImg" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/loginbutton2.png" />
          </image>
@@ -84,19 +84,23 @@
             <Font size="13.0" />
          </font>
       </Label>
-      <Label layoutX="805.0" layoutY="536.0" text="are you haven't accunt please create accunt" textFill="#5e53ff" />
-      <Hyperlink fx:id="hypCreate" layoutX="872.0" layoutY="557.0" onAction="#hypOnAction" text="Create Accunt" textFill="#4036ff">
+      <Label layoutX="712.0" layoutY="209.0" text="are you haven't accunt ?" textFill="#5e53ff">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+      <Hyperlink fx:id="hypCreate" layoutX="864.0" layoutY="229.0" onAction="#hypOnAction" text="Create Accunt" textFill="#ff4066">
          <font>
             <Font size="14.0" />
          </font>
       </Hyperlink>
-      <CheckBox fx:id="checkBox" layoutX="781.0" layoutY="419.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="59.0" text="Show" textFill="#183b80">
+      <CheckBox fx:id="checkBox" layoutX="991.0" layoutY="451.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="59.0" text="Show" textFill="#183b80">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></CheckBox>
-      <JFXTextField fx:id="textField" layoutX="776.0" layoutY="369.0" prefHeight="40.0" prefWidth="273.0" visible="false">
+      <JFXTextField fx:id="textField" labelFloat="true" layoutX="776.0" layoutY="404.0" prefHeight="40.0" prefWidth="273.0" promptText="Password">
          <font>
             <Font name="System Bold" size="17.0" />
          </font></JFXTextField>
+      <Label layoutX="17.0" layoutY="678.0" text="Version 0.0.1" />
    </children>
 </AnchorPane>
