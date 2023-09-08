@@ -14,9 +14,6 @@ import javax.persistence.*;
 @Table(name = "student_reservation")
 public class StudentReservation implements SuperEntity{
 
-    /*@EmbeddedId
-    private EmbeddedPK embeddedPK;*/
-
     @Id
     @Column(name = "student_reservation_id" ,length = 20)
     @GeneratedValue(strategy = GenerationType.IDENTITY)

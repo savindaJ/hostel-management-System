@@ -34,6 +34,4 @@ public class Reservation implements SuperEntity{
             @JoinColumn(name = "room_id")
     Room room;
 
-   /* @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "reservation")
-    List<StudentReservation> reservations = new ArrayList<>();*/
 }

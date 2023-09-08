@@ -29,9 +29,6 @@ public class Student implements SuperEntity{
     @Column(name = "student_gender" ,nullable = false)
     private String gender;
 
-   /* @ManyToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
-    List<Reservation> reservations = new ArrayList<>();*/
-
     @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "student")
     List<Reservation> reservations = new ArrayList<>();
 
