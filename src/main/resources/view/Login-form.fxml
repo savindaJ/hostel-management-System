@@ -94,7 +94,7 @@
          </font>
       </Hyperlink>
       <CheckBox fx:id="checkBox" layoutX="991.0" layoutY="451.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="59.0" text="Show" textFill="#000d25" />
-      <JFXTextField fx:id="textField" labelFloat="true" layoutX="776.0" layoutY="404.0" prefHeight="40.0" prefWidth="273.0" promptText="Password">
+      <JFXTextField fx:id="textField" labelFloat="true" layoutX="776.0" layoutY="404.0" prefHeight="40.0" prefWidth="273.0">
          <font>
             <Font name="System Bold" size="17.0" />
          </font></JFXTextField>

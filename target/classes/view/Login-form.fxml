@@ -20,7 +20,7 @@
             <Image url="@../assets/login3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="525.0" fitWidth="428.0" layoutX="701.0" layoutY="70.0" opacity="0.16" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="525.0" fitWidth="428.0" layoutX="701.0" layoutY="70.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../assets/logbox.png" />
          </image>
@@ -93,11 +93,8 @@
             <Font size="14.0" />
          </font>
       </Hyperlink>
-      <CheckBox fx:id="checkBox" layoutX="991.0" layoutY="451.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="59.0" text="Show" textFill="#183b80">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></CheckBox>
-      <JFXTextField fx:id="textField" labelFloat="true" layoutX="776.0" layoutY="404.0" prefHeight="40.0" prefWidth="273.0" promptText="Password">
+      <CheckBox fx:id="checkBox" layoutX="991.0" layoutY="451.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="59.0" text="Show" textFill="#000d25" />
+      <JFXTextField fx:id="textField" labelFloat="true" layoutX="776.0" layoutY="404.0" prefHeight="40.0" prefWidth="273.0">
          <font>
             <Font name="System Bold" size="17.0" />
          </font></JFXTextField>
